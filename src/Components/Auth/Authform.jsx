@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Authform = () => {
   return (
-    <div id="authform-wrapper" className='flex flex-col relative  w-[30%] px-10 py-3 ' >
+    <div id="authform-wrapper" className='flex flex-col relative    lg:w-[380px] md:px-10 sm:w-[500px]  py-3 w-[730px] px-2' >
       <div id="form" className='flex flex-col relative  pb-4'>
           <div id="logo" className='h-[65px] w-full  my-7 flex justify-center items-center'>
             <InstagramLogo className='h-full relative w-full object-cover' /></div>
