@@ -5,7 +5,7 @@ import PostFooter from './PostFooter'
 
 const Post = () => {
   return (
-    <div className=' w-[60%]  my-5 relative '>
+    <div className='w-[90%] md:w-[60%]  my-5 relative '>
         <PostHeader/>
         <PostContent/>
         <PostFooter/>
