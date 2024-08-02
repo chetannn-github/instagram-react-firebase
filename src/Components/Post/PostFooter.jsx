@@ -1,6 +1,6 @@
 import React from 'react'
 import { CommentLogo, UnlikeLogo } from '../../assets/constants'
-import { Save, Share } from 'lucide-react'
+import { Bookmark, Save, Share } from 'lucide-react'
 
 const PostFooter = () => {
   return (
@@ -9,7 +9,7 @@ const PostFooter = () => {
             <UnlikeLogo/>
             <CommentLogo/>
             <Share/>
-            <Save/>
+            <Bookmark/>
         </div> 
         <div id="likes">
             323 likes

@@ -15,9 +15,10 @@ const Navbar = () => {
       <InstagramLogo />
      </div> 
       <HomeNav/>
-      <ExploreNav/>
-      <ReelNav/>
-      <NewPostNav/>
+      <ReelNav/><NewPostNav/>
+      
+      
+      
       <MessageNav/>
       <ProfileNav/>
     </div>
