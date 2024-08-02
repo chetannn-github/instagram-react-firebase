@@ -3,7 +3,7 @@ import React from 'react'
 
 const ProfileNav = () => {
   return (
-    <div className='flex gap-5 w-5/6 justify-center mb-5'>
+    <div className='flex gap-5  justify-center mb-5'>
         <div className='flex gap-2'><Table/> <h3>Posts</h3></div>
        <div className='flex gap-2'><Bookmark />
         Saved

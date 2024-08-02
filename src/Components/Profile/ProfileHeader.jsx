@@ -2,8 +2,8 @@ import React from 'react'
 
 const ProfileHeader = () => {
   return (
-    <div className='w-full relative bg-gray-500 mb-10'>
-        <div className='flex gap-3 items-center'>
+
+        <div className='w-full relative  mb-10 flex gap-3 items-center'>
             <div id="img" className='h-[130px] w-[130px] rounded-full overflow-hidden'>
                 <img className='h-full w-full' src="./img1.png" alt="" />
             </div>
@@ -14,7 +14,7 @@ const ProfileHeader = () => {
                 <p>I am the danger boyz!!</p>
             </div>
         </div>
-    </div>
+   
   )
 }
 
