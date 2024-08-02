@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       width: {
-        'dynamic': 'calc(100vw - 250px)',
-        'lg':'calc(40vw - 250px)'
+        
+        'large':'calc(40vw - 250px)'
       },
     },
   },
