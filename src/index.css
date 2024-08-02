@@ -25,7 +25,7 @@ a{
     text-decoration: none;
     color: black;
 }
-#iglogo{
+#iglogo , .color-change{
 animation: colorchange 32s infinite;
 }
 @keyframes colorchange {
@@ -33,18 +33,19 @@ animation: colorchange 32s infinite;
 
     0% {
         fill: #ffda79;
+        background-color: #ffda79;
     }
     
     25% {
-        fill: #ffabe7;
+        fill: #ffabe7; background-color: #ffabe7;
     }
     50% {
-        fill: #d2bcf3;
+        fill: #d2bcf3; background-color: #d2bcf3;
     }
     75% {
-        fill: #edf3d8;
+        fill: #edf3d8; background-color: #edf3d8;
     }
-    100% {
-        fill: #ffda79;
+    100% { 
+        fill: #ffda79; background-color: #ffda79;
     }
     }
