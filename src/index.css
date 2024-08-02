@@ -12,7 +12,8 @@
     background: #000;
     box-sizing: border-box;
     font-family: "Gilroy";
-    color:white;
+    color: white;
+    
 
 }
 html,body{
@@ -24,3 +25,26 @@ a{
     text-decoration: none;
     color: black;
 }
+#iglogo{
+animation: colorchange 32s infinite;
+}
+@keyframes colorchange {
+    
+
+    0% {
+        fill: #ffda79;
+    }
+    
+    25% {
+        fill: #ffabe7;
+    }
+    50% {
+        fill: #d2bcf3;
+    }
+    75% {
+        fill: #edf3d8;
+    }
+    100% {
+        fill: #ffda79;
+    }
+    }

@@ -9,7 +9,7 @@ const SuggestedUser = () => {
         </div>
         <div id="user-info" className='text-white flex flex-col'>
         <p>chetan singh </p>
-        <p className='text-xs opacity-80'> suggested for you</p>
+        <p className='text-xs opacity-80'> Suggested for you</p>
         </div>
         </div>
         <div id="follow" className='text-blue-500 '>Follow</div>

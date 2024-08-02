@@ -13,8 +13,8 @@ const PostHeader = () => {
             <p>Original audio</p>
         </div>
        </div>
-       <div id="more-info">
-       <Ellipsis color='white' />
+       <div id="more-info" className='text-blue-600'>
+       unfollow
        </div>
     </div>
   )
