@@ -14,9 +14,8 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />}>
           <Route index element={<Feed/>} />
-          <Route path="search" element={<Search />} />
           <Route path="notifications" element={<Notifications />} />
-          <Route path="newpost" element={<NewPost/>} />
+          
           
       </Route>
         

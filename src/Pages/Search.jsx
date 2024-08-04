@@ -1,33 +1,25 @@
 import React, { useState } from 'react'
 import SuggestedUser from '../Components/Suggestions/SuggestedUser'
+import { useDispatch, useSelector } from 'react-redux';
+import { closeSearchModal } from '../redux/modalSlice';
 
 const Search = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsSearchOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsSearchOpen(false);
-  };
+  let dispatch = useDispatch();
+  let isSearchOpen= useSelector((store)=>(store.modal.searchModal));
+  console.log(isSearchOpen)
   return (
-    <div className='md:ml-[250px] w-[100vw] flex justify-center md:w-[60vw]'>
-    <button className="btn absolute" onClick={handleOpenModal}>
-        Open modal
+    <div className='fixed z-50 left-1/2 top-0 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px]  md:translate-x-0 bg-transparent'>
     
-    
-    </button>
 
     {isSearchOpen && (
     <dialog id="my_modal_3"
-     className=" modal relative mt-10 flex h-fit bg-red-600 w-[300px] md:w-[370px]  justify-center items-start " open>
-      <div className="border-white  border px-6 py-4 border-opacity-60">
+     className="relative mt-10 flex px-3 h-fit  w-[300px] md:w-[370px]  justify-center items-start " open>
+      <div className=" relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600">
         <form method="dialog">
           <div className='flex justify-between items-baseline'>
              <h1 className='text-xl font-semibold'>Search User</h1>
           <button className="btn btn-xl btn-circle btn-ghost "
-            onClick={handleCloseModal}>
+            onClick={()=>(dispatch(closeSearchModal()))}>
               ✕
           </button>
 

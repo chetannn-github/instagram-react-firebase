@@ -1,35 +1,29 @@
 import React, { useState } from 'react';
-import SuggestedUser from '../Components/Suggestions/SuggestedUser';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeNewPostModal } from '../redux/modalSlice';
 
 const NewPost = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
+  let dispatch = useDispatch();
+  let isNewPostOpen = useSelector((store)=>(store.modal.newPostModal));
 
   return (
-    <div className="md:ml-[250px] flex  justify-center md:w-[60vw] w-[100vw]">
-      <button className="btn absolute" onClick={handleOpenModal}>
-        Open modal
-      </button>
-      {isOpen && (
+    
+    <div className=" fixed z-50 left-1/2 top-0 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px] md:translate-x-0 bg-transparent">
+     
+
+      {isNewPostOpen && (
         <dialog
           id="my_modal_3"
-          className=" modal relative mt-10 flex h-fit overflow-hidden bg-red-600 w-[90vw] md:w-[400px]  justify-center items-start"
+          className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600"
           open
         >
-          <div className="border-white border px-6 py-4 border-opacity-60">
-            <form>
+          <div className="border-white border  px-2 md:px-6 py-4 border-opacity-60">
+            <form className='border-l-indigo-50'>
               <div className="flex justify-between items-baseline">
-                <h1 className="text-xl font-semibold">Create a post.</h1>
+                <h1 className="text-xl font-semibold ">Create a post.</h1>
                 <button
-                  className="btn btn-xl btn-circle btn-ghost"
-                  onClick={handleCloseModal}
+                  className="   "
+                  onClick={()=>(dispatch(closeNewPostModal()))}
                 >
                   ✕
                 </button>
@@ -38,7 +32,7 @@ const NewPost = () => {
               <div className="flex flex-col gap-5 mt-5">
                 <input
                   type="text"
-                  className="w-[300px] md:w-[300px] p-2"
+                  className="min-w-full md:w-[300px] p-2"
                   placeholder="Write a caption"
                 />
                 <input
