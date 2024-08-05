@@ -11,6 +11,7 @@ const useSignout = () => {
     const handleSignout = ()=>{
       signOut(auth).then(() => {
        console.log("signout hogyaa")
+       localStorage.removeItem("user")
       //  navigate("/auth")
       }).catch((error) => {
         // An error happened.

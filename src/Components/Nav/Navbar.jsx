@@ -17,11 +17,13 @@ const Navbar = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
 
+  
 
   useEffect(()=>{
     const unsuscribe = onAuthStateChanged(auth,(user)=>{
       if(user){
         const {uid,email, displayName} = user;
+        localStorage.setItem("user", JSON.stringify(user.uid))
         dispatch(addUser({uid,email,displayName}));
         
       }else{

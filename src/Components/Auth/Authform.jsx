@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleLoginForm } from '../../redux/authSlice'
 import {  useLogin } from '../../hooks/useLogin'
 import { useSignup } from '../../hooks/useSignup'
+import useGoogleAuth from '../../hooks/useGoogleAuth'
 
 const Authform = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const Authform = () => {
   const errorMsg = useSelector((store) => (store.auth.errorMsg));
   const handleLogin = useLogin();
   const handleSignup = useSignup();
+  const handleGoogleAuth = useGoogleAuth();
 
   const toggleForm = ()=>{
     dispatch(toggleLoginForm())
@@ -26,6 +28,7 @@ const Authform = () => {
     if(isLoginForm){handleLogin(inputs.email.current.value,inputs.password.current.value );}
     else{handleSignup(inputs.email.current.value,inputs.username.current.value,inputs.password.current.value, inputs.confirmPassword.current.value)}
   }
+
 
   return (
     <div id="authform-wrapper" className='flex flex-col relative lg:w-[380px] md:px-10 sm:w-[500px] gap-3   py-3 w-[730px] px-2' >
@@ -51,9 +54,10 @@ const Authform = () => {
         <h3>OR</h3> 
         <div className='w-[120px] h-[1px] bg-slate-100'></div>
       </div>
+
       <div className='flex h-[30px] justify-center items-center gap-4'>
         <img className='relative h-full ' src="./google.png" alt="" />
-        <h2 className='text-blue-700'>Signup with google</h2>
+        <h2 className='text-blue-700 cursor-pointer' onClick={handleGoogleAuth}>Signup with google</h2>
       </div>
       <div id="downloadapp" className='relative py-2 w-full'>
         <p>Get the app.</p>

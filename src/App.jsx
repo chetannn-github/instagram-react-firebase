@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
 import Auth from "./Pages/Auth"
@@ -8,6 +8,9 @@ import Feed from "./Pages/Feed";
 import NewPost from "./Pages/NewPost";
 
 function App() {
+  let user = localStorage.getItem("user");
+  
+  console.log(user)
   return (
     <>
     <BrowserRouter>
@@ -19,7 +22,8 @@ function App() {
           
       </Route>
         
-        <Route path="/auth" element={<Auth />} />
+      <Route path="/auth" element={user ? <Navigate to="/" /> : <Auth />}
+/>
         <Route path="/:username" element={<Profile />} />
         
       </Routes>
