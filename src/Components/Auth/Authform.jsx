@@ -28,7 +28,7 @@ const Authform = () => {
   }
 
   return (
-    <div id="authform-wrapper" className='flex flex-col relative lg:w-[380px] md:px-10 sm:w-[500px]   py-3 w-[730px] px-2' >
+    <div id="authform-wrapper" className='flex flex-col relative lg:w-[380px] md:px-10 sm:w-[500px] gap-3   py-3 w-[730px] px-2' >
       <div id="form" className='flex flex-col relative  pb-4'>
           <div id="logo" className='h-[65px] w-full  my-7 flex justify-center items-center'>
             <InstagramLogo className='h-full relative w-full object-cover' /></div>
@@ -44,6 +44,16 @@ const Authform = () => {
       <div id="signup" className='flex gap-1'>
         <p>{isLoginForm? "Don't have an account? " : "Already have an account? "}</p> 
         <Link onClick={toggleForm} className='underline text-[#0095F6]'> {isLoginForm? "Signup" : "Login "}</Link>
+      </div>
+
+      <div className='flex gap-4 justify-between items-center'>
+        <div className='w-[120px] h-[1px] bg-slate-100'></div>
+        <h3>OR</h3> 
+        <div className='w-[120px] h-[1px] bg-slate-100'></div>
+      </div>
+      <div className='flex h-[30px] justify-center items-center gap-4'>
+        <img className='relative h-full ' src="./google.png" alt="" />
+        <h2 className='text-blue-700'>Signup with google</h2>
       </div>
       <div id="downloadapp" className='relative py-2 w-full'>
         <p>Get the app.</p>
