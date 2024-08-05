@@ -10,6 +10,7 @@ import NewPost from "./Pages/NewPost";
 function App() {
   let user = localStorage.getItem("user");
   
+  
   console.log(user)
   return (
     <>
