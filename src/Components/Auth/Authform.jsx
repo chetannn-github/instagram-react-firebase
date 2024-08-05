@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { InstagramLogo } from '../../assets/constants'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleLoginForm } from '../../redux/authSlice'
+import {  useLogin } from '../../hooks/useLogin'
+import { useSignup } from '../../hooks/useSignup'
 
 const Authform = () => {
   const dispatch = useDispatch();
   const isLoginForm = useSelector((store) =>(store.auth.isLoginForm));
+  const errorMsg = useSelector((store) => (store.auth.errorMsg));
+  const handleLogin = useLogin();
+  const handleSignup = useSignup();
 
   const toggleForm = ()=>{
     dispatch(toggleLoginForm())
+  }
+  let inputs = {
+  email : useRef(null),
+  username : useRef(null),
+  password : useRef(null),
+  confirmPassword : useRef(null),};
+
+  let handleAuthFormSubmit = () =>{
+    if(isLoginForm){handleLogin(inputs.email.current.value,inputs.password.current.value );}
+    else{handleSignup(inputs.email.current.value,inputs.username.current.value,inputs.password.current.value, inputs.confirmPassword.current.value)}
   }
 
   return (
@@ -18,12 +33,12 @@ const Authform = () => {
           <div id="logo" className='h-[65px] w-full  my-7 flex justify-center items-center'>
             <InstagramLogo className='h-full relative w-full object-cover' /></div>
           <div id="inputs" className='flex flex-col relative gap-4' >
-            <input placeholder='email address' className='px-4 py-2 '></input>
-            {!isLoginForm && <input placeholder='username' className='px-4 py-2 '></input>}
-            <input placeholder='password' className='px-4 py-2 '></input>
-            {!isLoginForm && <input placeholder='confirmPassword' className='px-4 py-2 '></input>}
-
-            <button type="submit" className='bg-[#0095F6] px-4 py-2 text-black rounded-xl'>{isLoginForm?  "Login ":"Signup" }</button>
+            <input ref={inputs.email} placeholder='email address' className='px-4 py-2 '></input>
+            {!isLoginForm && <input ref={inputs.username} placeholder='username' className='px-4 py-2 '></input>}
+            <input placeholder='password' ref={inputs.password} className='px-4 py-2 '></input>
+            {!isLoginForm && <input ref={inputs.confirmPassword} placeholder='confirmPassword' className='px-4 py-2 '></input>}
+            <p className='text-red-600'>{errorMsg}</p>
+            <button type="submit" onClick={handleAuthFormSubmit} className='bg-[#0095F6] px-4 py-2 text-black rounded-xl'>{isLoginForm?  "Login ":"Signup" }</button>
           </div>
       </div>
       <div id="signup" className='flex gap-1'>

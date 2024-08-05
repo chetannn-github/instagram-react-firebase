@@ -8,7 +8,7 @@ const NewPost = () => {
 
   return (
     
-    <div className=" fixed z-50 left-1/2 top-0 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px] md:translate-x-0 bg-transparent">
+    <div className=" fixed z-50 left-1/2 top-1 0 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px] md:translate-x-0 bg-transparent">
      
 
       {isNewPostOpen && (
