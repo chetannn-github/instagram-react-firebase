@@ -1,3 +1,28 @@
+// import { getAuth, signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
+// import { useEffect } from "react";
+// import { useNavigate} from "react-router-dom";
+
+// const auth = getAuth();
+
+// const useGoogleAuth = () => {
+//   const navigate = useNavigate();
+
+//   const handleGoogleAuth = async () => {
+//     try {
+       
+//       await signInWithRedirect(auth, new GoogleAuthProvider());
+      
+//     } catch (error) {
+//       console.log(error.message);
+//     }
+
+    
+//   };
+
+ 
+
+//   return handleGoogleAuth;
+// }
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
