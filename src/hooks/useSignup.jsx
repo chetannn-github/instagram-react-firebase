@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { addErrorMsg } from "../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 export let useSignup = () =>{
     let dispatch = useDispatch();
@@ -18,8 +18,14 @@ export let useSignup = () =>{
             .then((userCredential) => {
             // Signed up 
              const user = userCredential.user;
-             console.log(user);
+              updateProfile(auth.currentUser,{
+                displayName: username,
+              })
+              .then(()=>{
+                console.log(user);
                 navigate("/");
+              })
+             
             })
         
             .catch((error) => {
