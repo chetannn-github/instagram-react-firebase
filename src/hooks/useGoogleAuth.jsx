@@ -1,61 +1,56 @@
-// import { getAuth, signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
-// import { useEffect } from "react";
-// import { useNavigate} from "react-router-dom";
-
-// const auth = getAuth();
-
-// const useGoogleAuth = () => {
-//   const navigate = useNavigate();
-
-//   const handleGoogleAuth = async () => {
-//     try {
-       
-//       await signInWithRedirect(auth, new GoogleAuthProvider());
-      
-//     } catch (error) {
-//       console.log(error.message);
-//     }
-
-    
-//   };
-
- 
-
-//   return handleGoogleAuth;
-// }
-
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { collection, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { firestore } from "../firebase";
 
 
 
 const auth = getAuth();
     const useGoogleAuth = () =>{
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    const handleGoogleAuth = ()=>{
+    const handleGoogleAuth =async ()=>{
         const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-        .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
+
+        try{
+            let {user} = await signInWithPopup(auth, provider);
             console.log(user);
-            navigate("/")
-            
-        })
-        .catch((error) => {
+
+            //checking is it signup / login 
+            const q = query(collection(firestore, "users"), where("email", "==", user.email));
+            const querySnapshot = await getDocs(q);
+
+            //signup
+            if(querySnapshot.empty && user){
+                const userInfo = {
+                    email:user.email ,
+                    username:user.email.split("@")[0],
+                    uid:user.uid,
+                    bio:"",
+                    profilePicURL:user.photoURL,
+                    followers:[],
+                    followings:[],
+                    posts:[],
+                    createdAt:Date.now(),
+    
+                }
+                await setDoc(doc(firestore, "users", userInfo.uid), userInfo);
+                console.log("data save hua - signup with google");
+            }
+            navigate("/");
+        }
+      
+        
+        catch(error){
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
             // The email of the user's account used.
-            const email = error.customData.email;
+            
             // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
+           console.log(error)
             // ...
-        });
+        };
 
     }
     return handleGoogleAuth
