@@ -3,6 +3,7 @@ import SuggestedUser from './SuggestedUser'
 import User from './User'
 
 const Suggestions = () => {
+  
   return (
     <div className=' hidden xl:w-[410px] xl:block pt-5 mt-10 '>
       <User/>

@@ -30,10 +30,7 @@ const Profile = () => {
 
       <div className='  min-h-[100vh] px-2  py-5 relative md:ml-[250px] md:px-10 '>
           <ProfileHeader/>
-          {(loggedInUser?.uid===profileUser?.uid) &&<div className='flex gap-4 text-black mb-4' >
-            <button onClick={openEditProfile} className='border-2 px-4 py-1 rounded-lg bg-amber-200 '>Edit Profile</button>
-            <button onClick={handleLogout} className='border-2 px-4 py-1 rounded-lg bg-red-300 '>Logout</button>
-            </div>}
+          
           
           
           <ProfileNav/>
