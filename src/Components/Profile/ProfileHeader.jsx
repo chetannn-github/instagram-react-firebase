@@ -33,9 +33,9 @@ const ProfileHeader = () => {
                 
                
                 <div className='flex gap-2 md:gap-4 text-md '>
-                    <p>1 posts</p>
-                    <p>2 followers</p>
-                     <p>2 followings</p>
+                    <p>{profileUser?.posts?.length} posts</p>
+                    <p>{profileUser?.followers?.length} followers</p>
+                     <p>{profileUser?.followings.length} followings</p>
                 </div>
                 <p className='text-s opacity-80'>Walter White</p>
                 <p>{profileUser?.bio}</p>

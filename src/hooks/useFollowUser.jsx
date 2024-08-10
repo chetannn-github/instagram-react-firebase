@@ -17,6 +17,7 @@ const useFollowUser = () => {
             const updatedFollowings = loggedInUser.followings.filter((user) => user !== uid);
             await updateDoc(loggedUserRef, {followings:updatedFollowings});
             dispatch(addUser({ ...loggedInUser, followings: updatedFollowings }));
+            localStorage.setItem("user", JSON.stringify({ ...loggedInUser, followings: updatedFollowings }));
       
 
             // remove from follower list of username user then save to db
@@ -33,7 +34,7 @@ const useFollowUser = () => {
             const updatedFollowings = [...loggedInUser.followings, uid];
             await updateDoc(loggedUserRef, {followings:updatedFollowings});
             dispatch(addUser({ ...loggedInUser, followings: updatedFollowings }));
-      
+            localStorage.setItem("user", JSON.stringify({ ...loggedInUser, followings: updatedFollowings }));
 
             // remove from follower list of username user then save to db
             const userRef = doc(firestore, "users", uid);

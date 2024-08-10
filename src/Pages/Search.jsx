@@ -40,7 +40,7 @@ const Search = () => {
            
           <button type="button" onClick={()=>{handleSearchUsers(searchTxt.current.value)}} className=' bg-gray-400 py-2 px-4 rounded-full'>Search</button>
           {searchedUsers && searchedUsers.map((user,index)=>(
-            <SuggestedUser key={index} username={user.username} profilePicURL={user.profilePicURL}   />))
+            <SuggestedUser key={index} username={user.username} profilePicURL={user.profilePicURL} uid={user.uid}  />))
         }   
           
           </div>
