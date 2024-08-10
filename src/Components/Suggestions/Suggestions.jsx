@@ -8,7 +8,8 @@ const Suggestions = () => {
     <div className=' hidden xl:w-[410px] xl:block pt-5 mt-10 '>
       <User/>
       <h3 className='opacity-75'>Suggestions for you!!</h3>
-      <SuggestedUser/><SuggestedUser/><SuggestedUser/>
+      {[1,3,3].map((item,index)=>(<SuggestedUser SuggestedUser = {true} key={index+32-2} />))}
+      
     </div>
   )
 }

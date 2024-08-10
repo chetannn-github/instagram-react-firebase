@@ -19,7 +19,7 @@ const useSearchUsers = () => {
             searchResults.push(doc.data());
         });
 
-        console.log(searchResults);
+        // console.log(searchResults);
         // add data to redux store 
         dispatch(addSearchedUser(searchResults));
 

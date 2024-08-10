@@ -40,7 +40,7 @@ export let useSignup = () =>{
             email , username,
             uid:user.uid,
             bio:"",
-            profilePicURL:"",
+            profilePicURL:"./user.webp",
             followers:[],
             followings:[],
             posts:[],

@@ -1,6 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import useFollowUser from '../../hooks/useFollowUser';
 
-const SuggestedUser = ({username = "chetan",profilePicURL="./img1.png",SuggestedUser=false}) => {
+const SuggestedUser = ({username = "mr.csr",profilePicURL="./img1.png",SuggestedUser=false , uid="ODy9l49aj5bPVGpgbsEM0p3aOMQ2"}) => {
+  let loggedInUser = useSelector((store)=>(store.loggedInUser));
+  let handleFollow = useFollowUser();
+  let isFollower = loggedInUser.followings.includes(uid);
+
   return (
     <div id="suggested-user" className='relative flex items-center  justify-between gap-3  mb-5 lg:w-full xl:w-5/6   my-2'>
         <div className='flex gap-3 items-center'>
@@ -12,7 +18,9 @@ const SuggestedUser = ({username = "chetan",profilePicURL="./img1.png",Suggested
        {SuggestedUser &&<p className='text-xs opacity-80'> Suggested for you</p>}
         </div>
         </div>
-        <div id="follow" className='text-blue-500 '>Follow</div>
+        <div id="follow" className='text-blue-500 cursor-pointer ' onClick={()=>{handleFollow(uid)}}>
+          {isFollower? "unfollow" : "follow"}
+        </div>
     </div>)
 }
 
