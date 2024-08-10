@@ -18,7 +18,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<Home />}>
+      <Route path="/" element={!loggedInUser ? <Navigate to="/auth" /> :<Home />}>
           <Route index element={<Feed/>} />
           <Route path="notifications" element={<Notifications />} />
           

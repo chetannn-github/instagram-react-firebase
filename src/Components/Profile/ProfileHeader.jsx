@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 const ProfileHeader = () => {
     let loggedInUser = useSelector((store)=>(store.loggedInUser));
     let profileUser = useSelector((store)=>(store.profilePageUser));
-    console.log(loggedInUser);
-    console.log(profileUser)
+    // console.log(loggedInUser);
+    // console.log(profileUser)
   return (
 
         <div className='w-full relative  mb-10 flex gap-3 items-center'>

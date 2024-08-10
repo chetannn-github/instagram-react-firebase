@@ -21,7 +21,7 @@ export let useLogin = () =>{
           const q = query(collection(firestore, "users"), where("email", "==", email));
           const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data());
+            // console.log(doc.id, " => ", doc.data());
             dispatch(addUser(doc.data()));
             localStorage.setItem("user", JSON.stringify(doc.data()));
           })

@@ -16,7 +16,7 @@ const auth = getAuth();
 
         try{
             let {user} = await signInWithPopup(auth, provider);
-            console.log(user);
+            // console.log(user);
 
             //checking is it signup / login 
             const q = query(collection(firestore, "users"), where("email", "==", user.email));
@@ -24,7 +24,7 @@ const auth = getAuth();
 
             //login
             querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
+                // console.log(doc.id, " => ", doc.data());
                 dispatch(addUser(doc.data()));
                 localStorage.setItem("user", JSON.stringify(doc.data()));
               })
@@ -44,7 +44,7 @@ const auth = getAuth();
     
                 }
                 await setDoc(doc(firestore, "users", userInfo.uid), userInfo);
-                console.log("data save hua - signup with google");
+                // console.log("data save hua - signup with google");
                 dispatch(addUser(userInfo));
                 localStorage.setItem("user", JSON.stringify(userInfo));
             }
