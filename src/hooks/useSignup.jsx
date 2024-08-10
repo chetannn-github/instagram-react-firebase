@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, firestore } from "../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
+import { addUser } from "../redux/loggedInUserSlice";
 
 
 export let useSignup = () =>{
@@ -22,6 +23,8 @@ export let useSignup = () =>{
       //CHECKING USERNAME ALREADY EXIST OR NOT
       const q = query(collection(firestore, "users"), where("username", "==", username));
       const querySnapshot = await getDocs(q);
+
+
       if(!querySnapshot.empty){
         dispatch(addErrorMsg("oops!! username already exists..."));
         return
@@ -45,7 +48,8 @@ export let useSignup = () =>{
           }
           await setDoc(doc(firestore, "users", userInfo.uid), userInfo);
 
-
+          dispatch(addUser(userInfo));
+          localStorage.setItem("user", JSON.stringify(userInfo));
           console.log("data save hua ")
         }
            

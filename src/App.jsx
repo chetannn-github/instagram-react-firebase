@@ -6,12 +6,14 @@ import Search from "./Pages/Search";
 import Notifications from "./Pages/Notifications";
 import Feed from "./Pages/Feed";
 import NewPost from "./Pages/NewPost";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
-  let user = localStorage.getItem("user");
+ let loggedInUser = useSelector((store)=>(store.loggedInUser))
   
   
-  console.log(user)
+  // console.log(user)
   return (
     <>
     <BrowserRouter>
@@ -23,9 +25,8 @@ function App() {
           
       </Route>
         
-      <Route path="/auth" element={user ? <Navigate to="/" /> : <Auth />}
-/>
-        <Route path="/:username" element={<Profile />} />
+      <Route path="/auth" element={loggedInUser ? <Navigate to="/" /> : <Auth />}/>
+      <Route path="/:username" element={<Profile />} />
         
       </Routes>
     </BrowserRouter>

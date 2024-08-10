@@ -8,7 +8,7 @@ import NewPostNav from './NewPostNav'
 import MessageNav from './MessageNav'
 import ProfileNav from './ProfileNav'
 import { onAuthStateChanged } from 'firebase/auth'
-import { addUser, removeUser } from '../../redux/userSlice'
+import { addUser, removeUser } from '../../redux/loggedInUserSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
@@ -21,13 +21,7 @@ const Navbar = () => {
 
   useEffect(()=>{
     const unsuscribe = onAuthStateChanged(auth,(user)=>{
-      if(user){
-        const {uid,email, displayName} = user;
-        localStorage.setItem("user", JSON.stringify(user.uid))
-        dispatch(addUser({uid,email,displayName}));
-        
-      }else{
-      
+      if(!user){
         dispatch(removeUser());
         navigate('/auth');
       }

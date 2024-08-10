@@ -1,13 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice.js"
 import modalReducer from "./modalSlice.js";
-import userReducer from "./userSlice.js"
+import loggedInUserReducer from "./loggedInUserSlice.js"
+import profilePageUserReducer from "./profilePageUserSlice.js";
+
 
 const appstore = configureStore({
     reducer:{
         auth:authReducer,
         modal:modalReducer,
-        user:userReducer
+        loggedInUser:loggedInUserReducer,
+        profilePageUser:profilePageUserReducer
     }
 })
 

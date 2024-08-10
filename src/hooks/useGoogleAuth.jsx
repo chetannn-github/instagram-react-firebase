@@ -2,13 +2,15 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { firestore } from "../firebase";
+import { addUser } from "../redux/loggedInUserSlice";
+import { useDispatch } from "react-redux";
 
 
 
 const auth = getAuth();
     const useGoogleAuth = () =>{
     const navigate = useNavigate();
-
+    let dispatch = useDispatch();
     const handleGoogleAuth =async ()=>{
         const provider = new GoogleAuthProvider();
 
@@ -19,6 +21,13 @@ const auth = getAuth();
             //checking is it signup / login 
             const q = query(collection(firestore, "users"), where("email", "==", user.email));
             const querySnapshot = await getDocs(q);
+
+            //login
+            querySnapshot.forEach((doc) => {
+                console.log(doc.id, " => ", doc.data());
+                dispatch(addUser(doc.data()));
+                localStorage.setItem("user", JSON.stringify(doc.data()));
+              })
 
             //signup
             if(querySnapshot.empty && user){
@@ -36,6 +45,8 @@ const auth = getAuth();
                 }
                 await setDoc(doc(firestore, "users", userInfo.uid), userInfo);
                 console.log("data save hua - signup with google");
+                dispatch(addUser(userInfo));
+                localStorage.setItem("user", JSON.stringify(userInfo));
             }
             navigate("/");
         }

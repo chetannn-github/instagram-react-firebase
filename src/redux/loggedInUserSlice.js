@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 let userSlice = createSlice({
-    name:"user",
-    initialState:null,
+    name:"loggedInuser",
+    initialState:JSON.parse(localStorage.getItem('user')),
     reducers:{
         addUser:(state,action) =>{
             return action.payload;
