@@ -13,7 +13,7 @@ const Suggestions = () => {
   return (
     <div className=' hidden xl:w-[410px] xl:block pt-5 mt-10 '>
       <User/>
-      {suggestedUsers.length!==0 &&(
+      {suggestedUsers?.length!==0 &&(
       <h3 className='opacity-75'>Suggestions for you!!</h3> )}
       {suggestedUsers&&suggestedUsers.map((user,index)=>(<SuggestedUser SuggestedUser = {true} key={index+32-2} uid={user.uid} profilePicURL={user.profilePicURL} username={user.username}/>))}
      
