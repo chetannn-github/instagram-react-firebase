@@ -4,6 +4,7 @@ import modalReducer from "./modalSlice.js";
 import loggedInUserReducer from "./loggedInUserSlice.js"
 import profilePageUserReducer from "./profilePageUserSlice.js";
 import searchedUserReducer from "./searchedUserSlice.js";
+import suggestedUsersReducer from "./suggestedUsers.js";
 
 
 const appstore = configureStore({
@@ -12,7 +13,8 @@ const appstore = configureStore({
         modal:modalReducer,
         loggedInUser:loggedInUserReducer,
         profilePageUser:profilePageUserReducer,
-        searchedUser:searchedUserReducer
+        searchedUser:searchedUserReducer,
+        suggestedUsers:suggestedUsersReducer
     }
 })
 
