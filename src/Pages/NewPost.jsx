@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeNewPostModal } from '../redux/modalSlice';
+import useCreatePost from '../hooks/useCreatePost';
 
 const NewPost = () => {
   let dispatch = useDispatch();
   let isNewPostOpen = useSelector((store)=>(store.modal.newPostModal));
+  let handleCreatePost = useCreatePost();
+  let caption = useRef(null);
 
   return (
     
@@ -34,6 +37,7 @@ const NewPost = () => {
                   type="text"
                   className="min-w-full md:w-[300px] p-2"
                   placeholder="Write a caption"
+                  ref={caption}
                 />
                 <input
                   type="file"
@@ -43,6 +47,7 @@ const NewPost = () => {
                 <button
                   type="button"
                   className="bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full"
+                  onClick={()=>{handleCreatePost(caption.current.value)}}
                 >
                   Create a post
                 </button>

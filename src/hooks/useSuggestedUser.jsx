@@ -23,7 +23,7 @@ const useSuggestedUser = () => {
             querySnapshot.forEach((doc) => {
                 if(doc.data().uid!= loggedInUser.uid){suggestedUsers.push(doc.data());}
               
-              console.log(doc.id, " => ", doc.data());
+            //   console.log(doc.id, " => ", doc.data());
             });
 
           dispatch(addSuggestedUsers(suggestedUsers));

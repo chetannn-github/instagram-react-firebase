@@ -5,6 +5,8 @@ import loggedInUserReducer from "./loggedInUserSlice.js"
 import profilePageUserReducer from "./profilePageUserSlice.js";
 import searchedUserReducer from "./searchedUserSlice.js";
 import suggestedUsersReducer from "./suggestedUsers.js";
+import feedPostsReducer from "./feedPostsSlice.js";
+import profilePostsReducer from "./profilePosts.js";
 
 
 const appstore = configureStore({
@@ -14,7 +16,9 @@ const appstore = configureStore({
         loggedInUser:loggedInUserReducer,
         profilePageUser:profilePageUserReducer,
         searchedUser:searchedUserReducer,
-        suggestedUsers:suggestedUsersReducer
+        suggestedUsers:suggestedUsersReducer,
+        feedPosts:feedPostsReducer,
+        profilePosts:profilePostsReducer
     }
 })
 
