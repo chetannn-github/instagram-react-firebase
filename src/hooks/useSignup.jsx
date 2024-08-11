@@ -42,7 +42,7 @@ export let useSignup = () =>{
             bio:"",
             profilePicURL:"./user.webp",
             followers:[],
-            followings:["l5u84Peo1ThLWSYXfFBo5OhtOlM2"],
+            followings:["Mklt9vKxC1bJQLJkJDVdCYQVJw42"],
             posts:[],
             createdAt:Date.now(),
           }
