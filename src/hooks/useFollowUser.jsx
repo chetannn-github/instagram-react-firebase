@@ -8,6 +8,10 @@ const useFollowUser = () => {
     let dispatch = useDispatch();
 
     let handleFollow =async (uid) =>{
+        if(uid===loggedInUser.uid){
+            console.log("khud ko follow nhii krr skte hoo")
+            return
+        }
         let follow = loggedInUser.followings.includes(uid);
         if(follow){
             // unfollow  

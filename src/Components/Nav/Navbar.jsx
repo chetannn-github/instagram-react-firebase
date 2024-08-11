@@ -12,12 +12,13 @@ import { addUser, removeUser } from '../../redux/loggedInUserSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
+import useFeedPosts from '../../hooks/useFeedPosts'
 
 const Navbar = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
 
-  
+  useFeedPosts();
 
   useEffect(()=>{
     const unsuscribe = onAuthStateChanged(auth,(user)=>{

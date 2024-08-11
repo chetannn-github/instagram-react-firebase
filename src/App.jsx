@@ -8,10 +8,11 @@ import Feed from "./Pages/Feed";
 import NewPost from "./Pages/NewPost";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import useFeedPosts from "./hooks/useFeedPosts";
 
 function App() {
  let loggedInUser = useSelector((store)=>(store.loggedInUser))
-  
+ 
   
   // console.log(user)
   return (

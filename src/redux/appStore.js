@@ -18,7 +18,8 @@ const appstore = configureStore({
         searchedUser:searchedUserReducer,
         suggestedUsers:suggestedUsersReducer,
         feedPosts:feedPostsReducer,
-        profilePosts:profilePostsReducer
+        profilePosts:profilePostsReducer,
+        feedPosts:feedPostsReducer,
     }
 })
 

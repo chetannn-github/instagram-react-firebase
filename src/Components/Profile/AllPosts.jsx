@@ -8,7 +8,7 @@ const AllPosts = () => {
   return (
     <div className='flex relative flex-wrap justify-center gap-5 sm:justify-start'>
        {posts&& posts.map((post, index)=>(
-          <ProfilePost postPicURL={post.postPicURL} key={post.uid}/>
+          <ProfilePost postPicURL={post.postPicURL} key={post.createdAt}/>
         ))}
     </div>
   )

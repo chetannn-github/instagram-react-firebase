@@ -2,7 +2,7 @@ import React from 'react'
 import { CommentLogo, UnlikeLogo } from '../../assets/constants'
 import { Bookmark, Save, Share } from 'lucide-react'
 
-const PostFooter = () => {
+const PostFooter = ({caption ,likes  , comments}) => {
   return (
     <div className='flex flex-col gap-2'>
        <div id="stats" className='flex gap-2'>
@@ -11,12 +11,11 @@ const PostFooter = () => {
             <Share/>
             <Bookmark/>
         </div> 
-        <div id="likes">
-            323 likes
+        <div id="likes" className='flex gap-3'>
+           <p>{likes.length} likes </p>  <p>{comments.length} comments </p> 
         </div>
         <div id="description">
-            username बहुत प्यारा दोस्त कौन है??
-Shri Hit Premanand Govind sharan Ji Maharaj Golden words🧡_____.......🙏💯like and share an
+           {caption}
         </div>
     </div>
   )
