@@ -3,6 +3,8 @@ import { firestore } from '../firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../redux/loggedInUserSlice';
 import { closeNewPostModal } from '../redux/modalSlice';
+import { v4 } from 'uuid';
+
 
 const useCreatePost = () => {
    let loggedInUser = useSelector((store)=>(store.loggedInUser));
@@ -18,16 +20,17 @@ const useCreatePost = () => {
             likes:[],
             comments:[],
             createdAt:Date.now(),
+            uid : v4()
 
          }  
-         const postRef = await addDoc(collection(firestore, "posts"), postInfo);
+         await setDoc(doc(firestore, "posts", postInfo.uid), postInfo);
         
-         const postId = postRef.id;
-         // console.log("post id"  + postId);
+        
+        
 
          // uid se user ko dhundh krr usme post ki uid add krdoo 
          const userRef = doc(firestore, 'users', loggedInUser.uid);
-         await updateDoc(userRef, {posts:[...loggedInUser.posts,postId]});
+         await updateDoc(userRef, {posts:[...loggedInUser.posts,postInfo.uid]});
 
          const updatedProfile = await getDoc(userRef);
          // console.log(updatedProfile.data());

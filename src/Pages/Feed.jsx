@@ -12,7 +12,7 @@ const Feed = () => {
     <div className='flex relative w-[100vw] h-max text-white md:ml-[250px]  md:w-dynamic '>
       <div id='feed' className='relative w-full h-max  flex flex-col items-center     '>
         {feedPosts&&feedPosts.map((feedPost)=>(
-          <Post key={feedPost.createdAt} postPicURL={feedPost.postPicURL} caption={feedPost.caption} owner= {feedPost.owner} likes= {feedPost.likes} comments= {feedPost.comments}/>
+          <Post key={feedPost.uid} uid={feedPost.uid} postPicURL={feedPost.postPicURL} caption={feedPost.caption} owner= {feedPost.owner} likes= {feedPost.likes} comments= {feedPost.comments}/>
         ))}
       </div>
       
