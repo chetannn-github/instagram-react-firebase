@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import useUserInfo from '../../hooks/useUserInfo'
 import useFollowUser from '../../hooks/useFollowUser';
 import { useSelector } from 'react-redux';
+import { Pencil, Trash2 } from 'lucide-react';
 
 const PostHeader = ({owner}) => {
  let  handleUserInfo = useUserInfo();
@@ -26,8 +27,12 @@ const PostHeader = ({owner}) => {
             <p>Original audio</p>
         </div>
        </div>
-       {loggedInUser.uid != owner &&<div id="more-info" className='text-blue-600' onClick={()=>{handleFollow(owner)}}>
+       {loggedInUser.uid != owner &&<div id="more-info" className='text-blue-600 cursor-pointer' onClick={()=>{handleFollow(owner)}}>
        unfollow
+       </div>}
+       {loggedInUser.uid === owner &&<div className='flex gap-2'>
+       <Pencil/>
+       <Trash2  stroke='red'/>
        </div>}
     </div>
   )

@@ -18,7 +18,7 @@ const Search = () => {
 
     {isSearchOpen && (
     <dialog id="my_modal_3"
-     className="relative mt-10 flex px-3 h-fit  w-[300px] md:w-[370px]  justify-center items-start " open>
+     className="relative mt-10 flex px-3 h-fit  w-[300px] md:w-[370px] border-zinc-100 border-[0.2px]  justify-center items-start " open>
       <div className=" relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600">
         <form method="dialog">
           <div className='flex justify-between items-baseline'>
@@ -38,7 +38,7 @@ const Search = () => {
             className='w-[250px] md:w-[300px] p-2'
              placeholder='Username'/>
            
-          <button type="button" onClick={()=>{handleSearchUsers(searchTxt.current.value)}} className=' bg-gray-400 py-2 px-4 rounded-full'>Search</button>
+          <button type="button" onClick={()=>{handleSearchUsers(searchTxt.current.value)}} className=' bg-gray-400 py-2 px-4 rounded-full mb-3'>Search</button>
           {searchedUsers && searchedUsers.map((user,index)=>(
             <SuggestedUser key={index} username={user.username} profilePicURL={user.profilePicURL} uid={user.uid}  />))
         }   
