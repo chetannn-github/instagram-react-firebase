@@ -8,21 +8,17 @@ import Search from "./Search"
 import useSignout from '../hooks/useSignout'
 import { useParams } from 'react-router-dom'
 import useProfileData from '../hooks/useProfileData'
-import { useDispatch, useSelector } from 'react-redux'
+
 import EditProfile from '../Components/EditProfile/EditProfile'
-import { openEditProfileModal, openNewPostModal } from '../redux/modalSlice'
+import useGetAllPosts from '../hooks/useGetAllPosts'
+
 
 
 const Profile = () => {
   let {username} = useParams();
-  let dispatch = useDispatch();
-  const handleLogout = useSignout();
+  let handleGetAllPosts = useGetAllPosts();
   useProfileData(username);
-  let loggedInUser = useSelector((store)=>(store.loggedInUser));
-  let profileUser = useSelector((store)=>(store.profilePageUser));
-  let openEditProfile = () =>{
-    dispatch((openEditProfileModal()))
-  }
+  handleGetAllPosts(username);
   
   return (
     <div className='relative max-w-[100vw] max-h-fit ' >

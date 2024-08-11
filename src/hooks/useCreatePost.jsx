@@ -13,7 +13,7 @@ const useCreatePost = () => {
          const postInfo = {
             caption,
             owner:loggedInUser.uid,
-            PostPicURL:"./post.webp",
+            postPicURL:"./post.webp",
             likes:[],
             comments:[],
             createdAt:Date.now(),
