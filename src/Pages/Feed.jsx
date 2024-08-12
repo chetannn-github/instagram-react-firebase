@@ -4,6 +4,7 @@ import Post from '../Components/Post/Post'
 import Search from './Search'
 import NewPost from './NewPost'
 import { useSelector } from 'react-redux'
+import EditPost from '../Components/EditPost/EditPost'
 
 const Feed = () => {
   let feedPosts = useSelector((store)=>(store.feedPosts));
@@ -18,7 +19,7 @@ const Feed = () => {
       
       <NewPost/>
       <Search/>
-
+      <EditPost/>
       <Suggestions/>
     </div>
     

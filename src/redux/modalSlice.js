@@ -5,7 +5,8 @@ const modalSlice = createSlice({
     initialState:{
         searchModal:false,
         newPostModal:false,
-        editProfileModal:false
+        editProfileModal:false,
+        editPostModal:false
 
     },
     reducers:{
@@ -27,8 +28,16 @@ const modalSlice = createSlice({
         closeEditProfileModal:(state ) =>{
             state.editProfileModal= false;
         },
+        openEditPostModal:(state ) =>{
+            state.editPostModal = true;
+        },
+        closeEditPostModal:(state ) =>{
+            state.editPostModal= false;
+        },
     }
 });
 
 export default modalSlice.reducer;
-export const {openNewPostModal, openSearchModal, closeSearchModal,closeNewPostModal,openEditProfileModal,closeEditProfileModal} = modalSlice.actions;
+export const {
+    openNewPostModal, openSearchModal, closeSearchModal,closeNewPostModal,openEditProfileModal,closeEditProfileModal,openEditPostModal,closeEditPostModal
+} = modalSlice.actions;

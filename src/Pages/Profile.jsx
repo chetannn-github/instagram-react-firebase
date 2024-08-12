@@ -5,12 +5,13 @@ import AllPosts from '../Components/Profile/AllPosts'
 import ProfileNav from '../Components/Profile/ProfileNav'
 import NewPost from './NewPost'
 import Search from "./Search"
-import useSignout from '../hooks/useSignout'
+
 import { useParams } from 'react-router-dom'
 import useProfileData from '../hooks/useProfileData'
 
 import EditProfile from '../Components/EditProfile/EditProfile'
 import useGetAllPosts from '../hooks/useGetAllPosts'
+import EditPost from '../Components/EditPost/EditPost'
 
 
 
@@ -35,6 +36,7 @@ const Profile = () => {
 
       <NewPost/>
       <Search/>
+      <EditPost/>
       <EditProfile/>
     </div>
   )

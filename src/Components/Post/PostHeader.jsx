@@ -2,11 +2,14 @@
 import React, { useEffect, useState } from 'react'
 import useUserInfo from '../../hooks/useUserInfo'
 import useFollowUser from '../../hooks/useFollowUser';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Pencil, Trash2 } from 'lucide-react';
+import { openEditPostModal } from '../../redux/modalSlice';
+import { addEditPostDetails, removeEditPostDetails } from '../../redux/editPostSlice';
 
-const PostHeader = ({owner}) => {
+const PostHeader = ({owner,uid,caption}) => {
  let  handleUserInfo = useUserInfo();
+ let dispatch = useDispatch();
  let loggedInUser = useSelector((store) =>(store.loggedInUser))
  let [postUserInfo , setPostUserInfo]= useState(null);
  let fetchUserInfo = async()=>{
@@ -31,7 +34,12 @@ const PostHeader = ({owner}) => {
        unfollow
        </div>}
        {loggedInUser.uid === owner &&<div className='flex gap-2'>
-       <Pencil/>
+       <Pencil onClick={()=>{
+        dispatch(removeEditPostDetails());
+        dispatch(openEditPostModal());
+        dispatch(addEditPostDetails({uid,caption}))
+      }
+        }/>
        <Trash2  stroke='red'/>
        </div>}
     </div>

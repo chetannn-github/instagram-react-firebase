@@ -7,7 +7,7 @@ import searchedUserReducer from "./searchedUserSlice.js";
 import suggestedUsersReducer from "./suggestedUsers.js";
 import feedPostsReducer from "./feedPostsSlice.js";
 import profilePostsReducer from "./profilePosts.js";
-
+import editPostReducer from "./editPostSlice.js";
 
 const appstore = configureStore({
     reducer:{
@@ -20,6 +20,7 @@ const appstore = configureStore({
         feedPosts:feedPostsReducer,
         profilePosts:profilePostsReducer,
         feedPosts:feedPostsReducer,
+        editPost:editPostReducer
     }
 })
 
