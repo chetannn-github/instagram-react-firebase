@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Pencil, Trash2 } from 'lucide-react';
 import { openEditPostModal } from '../../redux/modalSlice';
 import { addEditPostDetails, removeEditPostDetails } from '../../redux/editPostSlice';
+import useDeletePost from '../../hooks/useDeletePost';
 
 const PostHeader = ({owner,uid,caption}) => {
  let  handleUserInfo = useUserInfo();
@@ -15,6 +16,9 @@ const PostHeader = ({owner,uid,caption}) => {
  let fetchUserInfo = async()=>{
   setPostUserInfo(await handleUserInfo(owner));
 }
+
+let handleDelete = useDeletePost();
+
  useEffect(()=>{fetchUserInfo()},[owner])
 
  let handleFollow =useFollowUser();
@@ -40,7 +44,12 @@ const PostHeader = ({owner,uid,caption}) => {
         dispatch(addEditPostDetails({uid,caption}))
       }
         }/>
-       <Trash2  stroke='red'/>
+       <Trash2  stroke='red'
+        onClick={()=>{
+          handleDelete(uid);
+        }
+          }
+       />
        </div>}
     </div>
   )
