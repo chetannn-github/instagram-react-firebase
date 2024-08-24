@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeEditProfileModal } from '../../redux/modalSlice';
-import useUpdateProfile from '../../hooks/useUpdateProfile';
+import useUpdateProfile from '../../hooks/ProfileHooks/useUpdateProfile';
 
 const EditProfile = () => {
     let isEditPostOpen = useSelector((store)=>(store.modal.editProfileModal))

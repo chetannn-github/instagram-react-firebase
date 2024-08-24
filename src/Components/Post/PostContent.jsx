@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import useLikePost from '../../hooks/useLikePost';
+import useLikePost from '../../hooks/PostHooks/useLikePost';
 import { UnlikeLogo } from '../../assets/constants';
 
 const PostContent = ( {postPicURL,uid}) => {

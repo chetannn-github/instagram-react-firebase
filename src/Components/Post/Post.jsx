@@ -2,7 +2,7 @@ import React from 'react'
 import PostHeader from './PostHeader'
 import PostContent from './PostContent'
 import PostFooter from './PostFooter'
-import { useSelector } from 'react-redux'
+
 
 const Post = ({postPicURL,caption , likes  , comments ,owner ,uid}) => {
   

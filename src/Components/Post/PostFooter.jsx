@@ -1,7 +1,7 @@
 import React from 'react'
 import { CommentLogo, UnlikeLogo } from '../../assets/constants'
 import { Bookmark, Save, Share } from 'lucide-react'
-import useLikePost from '../../hooks/useLikePost'
+import useLikePost from '../../hooks/PostHooks/useLikePost'
 import { useSelector } from 'react-redux'
 
 

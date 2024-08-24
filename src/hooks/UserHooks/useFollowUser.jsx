@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
-import {firestore} from "../firebase"
-import { addUser } from "../redux/loggedInUserSlice";
+import {firestore} from "../../firebase"
+import { addUser } from "../../redux/loggedInUserSlice";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 const useFollowUser = () => {

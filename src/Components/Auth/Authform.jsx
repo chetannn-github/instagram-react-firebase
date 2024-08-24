@@ -3,15 +3,16 @@ import { InstagramLogo } from '../../assets/constants'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleLoginForm } from '../../redux/authSlice'
-import {  useLogin } from '../../hooks/useLogin'
-import { useSignup } from '../../hooks/useSignup'
-import useGoogleAuth from '../../hooks/useGoogleAuth'
+import {  useLogin } from '../../hooks/AuthHooks/useLogin'
+import { useSignup } from '../../hooks/AuthHooks/useSignup'
+import useGoogleAuth from '../../hooks/AuthHooks/useGoogleAuth'
 
 
 const Authform = () => {
   const dispatch = useDispatch();
   const isLoginForm = useSelector((store) =>(store.auth.isLoginForm));
   const errorMsg = useSelector((store) => (store.auth.errorMsg));
+  
   const handleLogin = useLogin();
   const handleSignup = useSignup();
   const handleGoogleAuth =  useGoogleAuth();

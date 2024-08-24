@@ -1,8 +1,8 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { firestore } from "../firebase";
+import { firestore } from "../../firebase";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addProfileUser, removeProfileUser } from "../redux/profilePageUserSlice";
+import { addProfileUser, removeProfileUser } from "../../redux/profilePageUserSlice";
 
 const useProfileData = async(username) => {
     let dispatch = useDispatch();

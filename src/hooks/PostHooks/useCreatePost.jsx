@@ -1,8 +1,8 @@
 import { addDoc, collection, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { firestore } from '../firebase';
+import { firestore } from '../../firebase';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser } from '../redux/loggedInUserSlice';
-import { closeNewPostModal } from '../redux/modalSlice';
+import { addUser } from '../../redux/loggedInUserSlice';
+import { closeNewPostModal } from '../../redux/modalSlice';
 import { v4 } from 'uuid';
 
 

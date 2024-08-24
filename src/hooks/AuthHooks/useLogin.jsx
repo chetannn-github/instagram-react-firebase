@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux"
-import { addErrorMsg } from "../redux/authSlice";
+import { addErrorMsg } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
-import { auth, firestore } from "../firebase";
+import { auth, firestore } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { addUser } from "../redux/loggedInUserSlice";
+import { addUser } from "../../redux/loggedInUserSlice";
 
 export let useLogin = () =>{
     let dispatch = useDispatch();

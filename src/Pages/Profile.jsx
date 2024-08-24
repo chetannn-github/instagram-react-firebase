@@ -7,10 +7,10 @@ import NewPost from './NewPost'
 import Search from "./Search"
 
 import { useParams } from 'react-router-dom'
-import useProfileData from '../hooks/useProfileData'
+import useProfileData from '../hooks/ProfileHooks/useProfileData'
 
 import EditProfile from '../Components/EditProfile/EditProfile'
-import useGetAllPosts from '../hooks/useGetAllPosts'
+import useGetAllPosts from '../hooks/PostHooks/useGetAllPosts'
 import EditPost from '../Components/EditPost/EditPost'
 
 

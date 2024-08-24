@@ -1,7 +1,7 @@
 import { collection, query, where, getDocs, limit } from "firebase/firestore";
-import {firestore} from "../firebase"
+import {firestore} from "../../firebase"
 import { useDispatch } from "react-redux";
-import { addSearchedUser, removeSearchedUser } from "../redux/searchedUserSlice";
+import { addSearchedUser, removeSearchedUser } from "../../redux/searchedUserSlice";
 const useSearchUsers = () => {
     //input is username and o/p will be all users which includes that username
     let dispatch = useDispatch();

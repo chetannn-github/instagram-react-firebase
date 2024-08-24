@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import SuggestedUser from '../Components/Suggestions/SuggestedUser'
 import { useDispatch, useSelector } from 'react-redux';
 import { closeSearchModal } from '../redux/modalSlice';
-import useSearchUsers from '../hooks/useSearchUsers';
+import useSearchUsers from '../hooks/UserHooks/useSearchUsers';
 
 const Search = () => {
   let dispatch = useDispatch();

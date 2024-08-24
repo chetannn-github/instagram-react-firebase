@@ -1,7 +1,7 @@
 import { collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
-import { firestore } from "../firebase";
-import { addFeedPosts } from "../redux/feedPostsSlice";
+import { firestore } from "../../firebase";
+import { addFeedPosts } from "../../redux/feedPostsSlice";
 
 
 const useLikePost = () => {

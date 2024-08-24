@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { openEditProfileModal } from '../../redux/modalSlice';
-import useSignout from '../../hooks/useSignout';
+import useSignout from '../../hooks/AuthHooks/useSignout';
 
 const ProfileHeader = () => {
     let loggedInUser = useSelector((store)=>(store.loggedInUser));

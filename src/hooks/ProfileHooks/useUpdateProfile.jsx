@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { firestore } from "../firebase";
+import { firestore } from "../../firebase";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { addUser } from "../redux/loggedInUserSlice";
-import { addProfileUser } from "../redux/profilePageUserSlice";
-import { closeEditProfileModal } from "../redux/modalSlice";
+import { addUser } from "../../redux/loggedInUserSlice";
+import { addProfileUser } from "../../redux/profilePageUserSlice";
+import { closeEditProfileModal } from "../../redux/modalSlice";
 
 
 const useUpdateProfile = () => {

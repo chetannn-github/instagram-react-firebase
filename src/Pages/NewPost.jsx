@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeNewPostModal } from '../redux/modalSlice';
-import useCreatePost from '../hooks/useCreatePost';
+import useCreatePost from '../hooks/PostHooks/useCreatePost';
 
 const NewPost = () => {
   let dispatch = useDispatch();

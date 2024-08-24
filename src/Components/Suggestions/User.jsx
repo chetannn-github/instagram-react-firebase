@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import useSignout from '../../hooks/useSignout'
+import useSignout from '../../hooks/AuthHooks/useSignout'
 
 const User = () => {
     let userInfo = useSelector((store)=>(store.loggedInUser));

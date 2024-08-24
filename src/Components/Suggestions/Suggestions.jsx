@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import SuggestedUser from './SuggestedUser'
 import User from './User'
-import useSuggestedUser from '../../hooks/useSuggestedUser'
+import useSuggestedUser from '../../hooks/UserHooks/useSuggestedUser'
 import { useSelector } from 'react-redux'
 
 const Suggestions = () => {

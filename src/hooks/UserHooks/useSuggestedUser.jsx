@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
-import {firestore} from "../firebase"
+import {firestore} from "../../firebase"
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { addSuggestedUsers } from "../redux/suggestedUsers";
+import { addSuggestedUsers } from "../../redux/suggestedUsers";
 
 const useSuggestedUser = () => {
     let loggedInUser = useSelector((store) =>(store.loggedInUser));

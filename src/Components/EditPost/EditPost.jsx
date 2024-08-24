@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeEditPostModal } from '../../redux/modalSlice';
-import useEditPost from '../../hooks/useEditPost';
+import useEditPost from '../../hooks/PostHooks/useEditPost';
 
 const EditPost = () => {
     let isEditPostOpen = useSelector((store)=>(store.modal.editPostModal));

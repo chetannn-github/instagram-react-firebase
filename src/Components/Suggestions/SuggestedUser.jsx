@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import useFollowUser from '../../hooks/useFollowUser';
+import useFollowUser from '../../hooks/UserHooks/useFollowUser';
 import { Link } from 'react-router-dom';
 
 const SuggestedUser = ({username = "mr.csr",profilePicURL="./img1.png",SuggestedUser=false , uid="ODy9l49aj5bPVGpgbsEM0p3aOMQ2"}) => {

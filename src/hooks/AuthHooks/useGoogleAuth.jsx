@@ -1,8 +1,8 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { firestore } from "../firebase";
-import { addUser } from "../redux/loggedInUserSlice";
+import { firestore } from "../../firebase";
+import { addUser } from "../../redux/loggedInUserSlice";
 import { useDispatch } from "react-redux";
 
 

@@ -1,7 +1,7 @@
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
-import { firestore } from "../firebase";
+import { firestore } from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../redux/loggedInUserSlice";
+import { addUser } from "../../redux/loggedInUserSlice";
 
 
 const useDeletePost = () => {

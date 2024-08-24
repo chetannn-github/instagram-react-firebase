@@ -1,12 +1,12 @@
 
 import React, { useEffect, useState } from 'react'
-import useUserInfo from '../../hooks/useUserInfo'
-import useFollowUser from '../../hooks/useFollowUser';
+import useUserInfo from '../../hooks/UserHooks/useUserInfo'
+import useFollowUser from '../../hooks/UserHooks/useFollowUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { Pencil, Trash2 } from 'lucide-react';
 import { openEditPostModal } from '../../redux/modalSlice';
 import { addEditPostDetails, removeEditPostDetails } from '../../redux/editPostSlice';
-import useDeletePost from '../../hooks/useDeletePost';
+import useDeletePost from '../../hooks/PostHooks/useDeletePost';
 
 const PostHeader = ({owner,uid,caption}) => {
  let  handleUserInfo = useUserInfo();

@@ -1,7 +1,7 @@
 import { collection, getDocs,  query, where } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
-import { firestore } from '../firebase';
-import { addProfilePosts, removeProfilePosts } from '../redux/profilePosts.js';
+import { firestore } from '../../firebase.js';
+import { addProfilePosts, removeProfilePosts } from '../../redux/profilePosts.js';
 
 
 const useGetAllPosts = () => {
