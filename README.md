@@ -1,25 +1,26 @@
 # Instagram Clone
-================
+ ## A React-based Instagram clone with Firebase authentication, Google OAuth, and Firebase database, storage, and Tailwind CSS for styling.
 
-### Preview 1
+### Auth Page
 ![Preview Image 1](/public/preview/preview0.png)
 
-### Preview 2
+### Feed (Desktop )
 ![Preview Image 2](/public/preview/preview1.png)
 
-### Preview 3
+### Feed (Tabs )
 ![Preview Image 3](/public/preview/preview2.png)
 
-### Preview 4
+### Search
 ![Preview Image 4](/public/preview/preview3.png)
 
-### Preview 5
+### Create Post
 ![Preview Image 5](/public/preview/preview4.png)
+###  Profile
+![Preview Image 5](/public/preview/preview5.png)
 
-A React-based Instagram clone with Firebase authentication, Google OAuth, and Firebase database, storage, and Tailwind CSS for styling.
 
 ## Features
-------------
+
 
 ### v1.0
 
