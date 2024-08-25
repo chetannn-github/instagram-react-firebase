@@ -12,7 +12,8 @@ const ReelNav = () => {
     
     <div className='flex gap-3 cursor-pointer 'onClick={()=>{
       dispatch(closeNewPostModal())
-      dispatch(openSearchModal())}}>
+      dispatch(openSearchModal())}}
+    >
         <Search stroke='white' className='' />
         <div id="logo-name" className='hidden md:block text-cyan-50'>Search</div>
       

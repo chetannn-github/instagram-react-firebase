@@ -1,22 +1,30 @@
 import { addDoc, collection, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { firestore } from '../../firebase';
+import { firestore, storage } from '../../firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../../redux/loggedInUserSlice';
 import { closeNewPostModal } from '../../redux/modalSlice';
 import { v4 } from 'uuid';
+import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 
 
 const useCreatePost = () => {
    let loggedInUser = useSelector((store)=>(store.loggedInUser));
     let dispatch = useDispatch();
  // return a function which takes postdetails and create post in db 
-   const handleCreatePost = async(caption) =>{
-    // new post create in db 
-      try{
+   const handleCreatePost = async(caption,selectedFile) =>{
+
+try{
+      const storageRef = ref(storage, `posts/${loggedInUser.uid}`);
+      await uploadString(storageRef, selectedFile, 'data_url')
+      console.log('Uploaded a data_url string!');
+      let URL = await getDownloadURL(storageRef)
+    
+    // new post create in db
+      
          const postInfo = {
             caption,
             owner:loggedInUser.uid,
-            postPicURL:"./post.webp",
+            postPicURL:URL,
             likes:[],
             comments:[],
             createdAt:Date.now(),

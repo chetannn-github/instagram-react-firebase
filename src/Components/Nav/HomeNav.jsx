@@ -8,7 +8,7 @@ const HomeNav= ({logo}) => {
     <Link to={"/"}>
       <div className='flex gap-3 '>
         <House stroke='white' className='' />
-      <div id="logo-name" className='hidden md:block text-cyan-50'>Home</div>
+        <div id="logo-name" className='hidden md:block text-cyan-50'>Home</div>
       
     </div>
     </Link>

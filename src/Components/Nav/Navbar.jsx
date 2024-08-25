@@ -1,26 +1,27 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { InstagramLogo } from '../../assets/constants'
 import HomeNav from './HomeNav'
-import ExploreNav from './ExploreNav'
+
 import ReelNav from './ReelNav'
 import NewPostNav from './NewPostNav'
 import MessageNav from './MessageNav'
 import ProfileNav from './ProfileNav'
+
 import { onAuthStateChanged } from 'firebase/auth'
-import { addUser, removeUser } from '../../redux/loggedInUserSlice'
+import { removeUser } from '../../redux/loggedInUserSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
-import useFeedPosts from '../../hooks/PostHooks/useFeedPosts'
+
+
 
 const Navbar = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
 
-  useFeedPosts();
-
-  useEffect(()=>{
+  
+useEffect(()=>{
     const unsuscribe = onAuthStateChanged(auth,(user)=>{
       if(!user){
         dispatch(removeUser());

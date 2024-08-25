@@ -34,8 +34,14 @@ const useLikePost = () => {
             
            
               // update  redux 
-            let newFeedPosts = feedPosts.filter((feedPost)=>(feedPost.uid!== postId))
-            dispatch(addFeedPosts([...newFeedPosts,{...postData,likes:updatedLikes}]))
+            // let newFeedPosts = feedPosts.filter((feedPost)=>(feedPost.uid!== postId));
+            const newFeedPosts = feedPosts.map((feedPost) => {
+                if (feedPost.uid === postId) {
+                  return { ...feedPost, likes: updatedLikes };
+                }
+                return feedPost;
+              });
+            dispatch(addFeedPosts(newFeedPosts))
         }
         else{
              // if loggedin user ki uid likes me exist nhii  krti hh  toh add kr do 
@@ -47,8 +53,17 @@ const useLikePost = () => {
 
 
                // update  redux 
-               let newFeedPosts = feedPosts.filter((feedPost)=>(feedPost.uid!== postId))
-               dispatch(addFeedPosts([...newFeedPosts,{...postData,likes:updatedLikes}]))
+
+            //    let newFeedPosts = feedPosts.filter((feedPost)=>(feedPost.uid!== postId)); 
+            // agr order matter krtaa hhh filter use krke spread mt krooo 
+
+               const newFeedPosts = feedPosts.map((feedPost) => {
+                if (feedPost.uid === postId) {
+                  return { ...feedPost, likes: updatedLikes };
+                }
+                return feedPost;
+              });
+               dispatch(addFeedPosts(newFeedPosts))
         }
         
          

@@ -2,19 +2,19 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeNewPostModal } from '../redux/modalSlice';
 import useCreatePost from '../hooks/PostHooks/useCreatePost';
+import usePreviewImg from '../hooks/usePreviewImg';
 
 const NewPost = () => {
   let dispatch = useDispatch();
   let isNewPostOpen = useSelector((store)=>(store.modal.newPostModal));
   let handleCreatePost = useCreatePost();
   let caption = useRef(null);
+  let { selectedFile, handleImageChange, setSelectedFile } = usePreviewImg();
 
   return (
     
     <div className=" fixed z-50 left-1/2 top-1 0 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px] md:translate-x-0 bg-transparent">
-     
-
-      {isNewPostOpen && (
+     {isNewPostOpen && (
         <dialog
           id="my_modal_3"
           className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600"
@@ -43,11 +43,13 @@ const NewPost = () => {
                   type="file"
                   accept="image/*"
                   className="border-l-indigo-400"
+                  onChange={handleImageChange}
+                  
                 />
                 <button
                   type="button"
                   className="bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full"
-                  onClick={()=>{handleCreatePost(caption.current.value)}}
+                  onClick={()=>{handleCreatePost(caption.current.value,selectedFile)}}
                 >
                   Create a post
                 </button>

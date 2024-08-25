@@ -12,34 +12,28 @@ const useUpdateProfile = () => {
 
   let handleUpdateProfile = async(username, bio) =>{
     console.log(username,bio);
-    
     // check username phele se exist toh nhii kr rhaa hhh  
+    try{
+        //firestore me update krr degee
 
+        const userRef = doc(firestore, 'users', loggedInUser.uid);
+        await updateDoc(userRef, { username,bio });
 
+        const updatedProfile = await getDoc(userRef);
+        console.log(updatedProfile.data());
+      
+        if (updatedProfile.exists()) {
+          // Update local storage && redux
+          dispatch(addUser(updatedProfile.data()));
+          dispatch(addProfileUser(updatedProfile.data()));
+          localStorage.setItem("user", JSON.stringify(updatedProfile.data()));
+        }
+        // hide the modal
+        dispatch(closeEditProfileModal());
 
-
-
-try{
-    //firestore me update krr degee
-
-    const userRef = doc(firestore, 'users', loggedInUser.uid);
-    await updateDoc(userRef, { username,bio });
-
-    const updatedProfile = await getDoc(userRef);
-    console.log(updatedProfile.data());
-  
-    if (updatedProfile.exists()) {
-      // Update local storage && redux
-      dispatch(addUser(updatedProfile.data()));
-      dispatch(addProfileUser(updatedProfile.data()));
-      localStorage.setItem("user", JSON.stringify(updatedProfile.data()));
-    }
-    // hide the modal
-    dispatch(closeEditProfileModal());
-
-    }catch(err){
-        console.log(err.message)
-    }
+        }catch(err){
+            console.log(err.message)
+        }
 
   }
   return handleUpdateProfile

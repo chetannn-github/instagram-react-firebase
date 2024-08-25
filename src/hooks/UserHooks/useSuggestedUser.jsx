@@ -28,6 +28,7 @@ const useSuggestedUser = () => {
 
           dispatch(addSuggestedUsers(suggestedUsers));
     }
-    return fetchSuggestedUser}
+    return fetchSuggestedUser
+}
 
 export default useSuggestedUser

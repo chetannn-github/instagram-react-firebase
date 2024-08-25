@@ -10,8 +10,9 @@ const NewPostNav = () => {
     
     <div className='flex gap-3 cursor-pointer ' onClick={()=>{
       dispatch(closeSearchModal())
-      dispatch(openNewPostModal())}}>
-    <PlusCircle stroke='white' className='' />
+      dispatch(openNewPostModal())}}
+    >
+      <PlusCircle stroke='white' className='' />
       <div id="logo-name" className='hidden md:block text-cyan-50'>Create</div>
       
     </div>

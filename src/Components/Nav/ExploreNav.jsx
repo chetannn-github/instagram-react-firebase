@@ -4,7 +4,7 @@ import React from 'react'
 const ExploreNav = () => {
   return (
     <div className='flex gap-3 '>
-    <Compass stroke='white' className='' />
+      <Compass stroke='white' className='' />
       <div id="logo-name" className='hidden md:block text-cyan-50'>Explore</div>
       
     </div>
