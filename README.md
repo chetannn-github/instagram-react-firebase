@@ -31,6 +31,9 @@
 * **Like Post**: Like and unlike posts
 * **Delete Post**: Delete own posts
 * **Update Profile**: Update profile information and profile picture
+* **Suggest Users**: Get suggestions for users to follow
+* **Search Users**: Search for users by username or name
+* **Follow/Unfollow User**: Follow or unfollow other users
 
 ## Roadmap
 ----------
