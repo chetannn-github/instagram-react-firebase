@@ -12,10 +12,10 @@ const Feed = () => {
 
   
   return (
-    <div className='flex relative w-[100vw] h-max text-white md:ml-[250px]  md:w-dynamic '>
+    <div className='flex relative w-[100vw] h-max text-white bg-black md:ml-[250px]  md:w-dynamic '>
         <div id='feed' className='relative w-full h-max  flex flex-col items-center'>
           
-        {!feedPosts && (<Spinner/>)}
+        {!feedPosts && (<img src='./loading.svg'></img>)}
 
         {feedPosts?.length ===0 && <div>NO Post on feed.  Either post  something or follow someone!! </div>}
 

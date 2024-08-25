@@ -14,6 +14,7 @@ const ProfileHeader = () => {
   let openEditProfile = () =>{
     dispatch((openEditProfileModal()))
   }
+
   return (
 
         <div className='w-full relative  mb-10 flex gap-3 items-center '>

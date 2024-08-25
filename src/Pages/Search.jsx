@@ -19,7 +19,7 @@ const Search = () => {
     {isSearchOpen && (
     <dialog id="my_modal_3"
      className="relative mt-10 flex px-3 h-fit  w-[300px] md:w-[370px] border-zinc-100 border-[0.2px]  justify-center items-start " open>
-      <div className=" relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600">
+      <div className=" relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start ">
         <form method="dialog">
           <div className='flex justify-between items-baseline'>
              <h1 className='text-xl font-semibold'>Search User</h1>

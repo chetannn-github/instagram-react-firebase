@@ -15,13 +15,13 @@ const PostContent = ( {postPicURL,uid}) => {
 
   let handleLike = useLikePost();
   return (
-    <div id='post-content' onDoubleClick={handleDoubleClick} className='select-none my-3 h-[80vh] relative w-full bg-red-200'>
+    <div id='post-content' onDoubleClick={handleDoubleClick} className='select-none my-3 h-[80vh] relative w-full '>
 
       {showUnlike&&<div className="z-30 absolute h-[200px] w-[200px] bg-transparent left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]" >
           <UnlikeLogo  like={true} height=''/> 
         </div>}  
         
-        <img className='relative w-full h-full object-cover ' src={postPicURL} alt="" />
+        <img className='relative w-full h-full object-contain ' src={postPicURL} alt="" />
         
     </div>
   )

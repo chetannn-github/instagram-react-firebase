@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { firestore } from "../../firebase";
 import { addUser } from "../../redux/loggedInUserSlice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 
 
@@ -60,6 +61,7 @@ const auth = getAuth();
             
             // The AuthCredential type that was used.
            console.log(error)
+           toast.error("Auth failed ! try again")
             // ...
         };
 

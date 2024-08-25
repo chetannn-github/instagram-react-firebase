@@ -19,7 +19,7 @@ const useUpdateProfile = () => {
     // check username phele se exist toh nhii kr rhaa hhh  
     try{
       if (loading) {
-        toast.error("Arre, edit ho rhii hhh, thoda sa wait kar lo! ⏰")
+        toast.error("Arre, update ho rhaa hhh, thoda wait kar lo!⏰")
         
         return
       } 

@@ -7,7 +7,7 @@ const EditPost = () => {
     let isEditPostOpen = useSelector((store)=>(store.modal.editPostModal));
     let editPost = useSelector((store)=>(store.editPost))
 
-    let handleEditPost = useEditPost();
+    let {handleEditPost,loading} = useEditPost();
     let dispatch = useDispatch();
 
     let updatePost = {
@@ -25,7 +25,7 @@ const EditPost = () => {
     {isEditPostOpen && (
       <dialog
         id="my_modal_3"
-        className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600"
+        className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start "
         open
       >
         <div className="border-white border  px-2 md:px-6 py-4 border-opacity-60">
@@ -54,13 +54,12 @@ const EditPost = () => {
                 accept="image/*"
                 className="border-l-indigo-400"
               />
-              <button
+              <div
                 onClick={handleFormSubmit}
-                type="button"
-                className="bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full"
+                className={`bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full ${loading? "cursor-not-allowed":"cursor-pointer"}`}
               >
-                Update 
-              </button>
+                  {loading? <img className='relative h-full w-[30px]' src='./loading.svg'></img> :"Update Post" }
+              </div>
             </div>
           </form>
         </div>
