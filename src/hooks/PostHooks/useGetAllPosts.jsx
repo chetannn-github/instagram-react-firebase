@@ -11,14 +11,12 @@ const useGetAllPosts = () => {
     let handleGetAllPosts = async (username) =>{
         // find uid for that username
       try{
-
-        
-      const que= query(collection(firestore, "users"), where("username", "==", username));
-      const querySnap = await getDocs(que);
-      let user;
-      querySnap.forEach((doc) => {
-         user = doc.data();
-      });
+          const que= query(collection(firestore, "users"), where("username", "==", username));
+          const querySnap = await getDocs(que);
+          let user;
+          querySnap.forEach((doc) => {
+          user = doc.data();
+          });
 
         
         // db se saari post laao jisme owner ki uid match krr rhii 

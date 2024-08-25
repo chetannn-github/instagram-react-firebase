@@ -9,7 +9,7 @@
 *{
     margin: 0;
     padding: 0;
-    background: #000;
+    /* background: #000; */
     box-sizing: border-box;
     font-family: "Gilroy";
     color: white;
@@ -24,8 +24,12 @@ html,body{
 
 a{
     text-decoration: none;
-    color: black;
+    /* color: black; */
 }
+
+
+
+
 #iglogo , .color-change{
 animation: colorchange 4s infinite;
 }

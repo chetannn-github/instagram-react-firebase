@@ -7,7 +7,7 @@ import usePreviewImg from '../hooks/usePreviewImg';
 const NewPost = () => {
   let dispatch = useDispatch();
   let isNewPostOpen = useSelector((store)=>(store.modal.newPostModal));
-  let handleCreatePost = useCreatePost();
+  let {handleCreatePost ,loading}= useCreatePost();
   let caption = useRef(null);
   let { selectedFile, handleImageChange, setSelectedFile } = usePreviewImg();
 
@@ -46,13 +46,14 @@ const NewPost = () => {
                   onChange={handleImageChange}
                   
                 />
-                <button
-                  type="button"
-                  className="bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full"
+                <div
+                  
+                  className={`bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full ${loading? "cursor-not-allowed":"cursor-pointer"}`}
                   onClick={()=>{handleCreatePost(caption.current.value,selectedFile)}}
                 >
-                  Create a post
-                </button>
+                  {loading? <img className='relative h-full w-[30px]' src='./loading.svg'></img> :"Create a post" }
+                  
+                </div>
               </div>
             </form>
           </div>

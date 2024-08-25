@@ -7,7 +7,7 @@ import usePreviewImg from '../../hooks/usePreviewImg';
 const EditProfile = () => {
     let isEditPostOpen = useSelector((store)=>(store.modal.editProfileModal))
     let loggedInUser = useSelector((store)=>(store.loggedInUser));
-    let handleUpdateProfile = useUpdateProfile();
+    let {handleUpdateProfile , loading} = useUpdateProfile();
     let dispatch = useDispatch();
     let updateProfileInputs = {
         username: useRef(loggedInUser?.username),
@@ -19,7 +19,7 @@ const EditProfile = () => {
         handleUpdateProfile(updateProfileInputs.username.current.value,updateProfileInputs.bio.current.value,selectedFile)
     }
 
-  let  {selectedFile, handleImageChange, setSelectedFile } = usePreviewImg();
+  let  {selectedFile, handleImageChange } = usePreviewImg();
 
 
   return (
@@ -29,7 +29,7 @@ const EditProfile = () => {
     {isEditPostOpen && (
       <dialog
         id="my_modal_3"
-        className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-yellow-600"
+        className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start "
         open
       >
         <div className="border-white border  px-2 md:px-6 py-4 border-opacity-60">
@@ -64,13 +64,13 @@ const EditProfile = () => {
                 className="border-l-indigo-400"
                 onChange={handleImageChange}
               />
-              <button
+              <div
                 onClick={handleFormSubmit}
-                type="button"
-                className="bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full"
+               
+                className={`bg-gray-400 text-black color-change  max-w-fit py-2 px-10 rounded-full ${loading? "cursor-not-allowed":"cursor-pointer"}`}
               >
-                Update 
-              </button>
+                {loading? <img className='relative h-full w-[30px]' src='./loading.svg'></img> :"Update Profile" }
+              </div>
             </div>
           </form>
         </div>
