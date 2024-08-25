@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import {firestore} from "../../firebase"
 import { addUser } from "../../redux/loggedInUserSlice";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 const useFollowUser = () => {
     let loggedInUser = useSelector((store)=>(store.loggedInUser));
@@ -29,6 +30,7 @@ const useFollowUser = () => {
             const otherUser = await getDoc(userRef);
             const updatedFollowers = otherUser.data().followers.filter((user) => user !== loggedInUser.uid);
             await updateDoc(userRef, {followers:updatedFollowers});
+            toast.success("Bye bye, unfollow hogya! 👋")
         }
         else{
         //follow
@@ -46,6 +48,7 @@ const useFollowUser = () => {
             const updatedFollowers = [...otherUser.data().followers, loggedInUser.uid];
             
             await updateDoc(userRef, {followers:updatedFollowers});
+            toast.success("yeyeehhh ! Follow hogya  📱")
 
         }
         catch(err) {

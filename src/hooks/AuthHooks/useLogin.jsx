@@ -5,6 +5,7 @@ import { auth, firestore } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { addUser } from "../../redux/loggedInUserSlice";
+import toast from "react-hot-toast";
 
 export let useLogin = () =>{
     let dispatch = useDispatch();
@@ -25,6 +26,7 @@ export let useLogin = () =>{
             dispatch(addUser(doc.data()));
             localStorage.setItem("user", JSON.stringify(doc.data()));
           })
+          toast.success(" aapka swagat hai! 👏")
           navigate('/');
 
         }catch(error)  {

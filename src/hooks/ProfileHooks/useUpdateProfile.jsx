@@ -55,9 +55,11 @@ const useUpdateProfile = () => {
         // hide the modal
         dispatch(closeEditProfileModal());
         setLoading(false);
+        toast.success("Aapka profile fresh ho gaya, new look! 🌈")
 
         }catch(err){
-            console.log(err.message)
+            console.log(err.message);
+            toast.error("Aapka profile update mein kuch technical issue hai, try again later! 🤖")
         }
 
   }

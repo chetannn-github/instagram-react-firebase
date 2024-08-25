@@ -19,7 +19,7 @@ const ProfileHeader = () => {
 
         <div className='w-full relative  mb-10 flex gap-3 items-center '>
             <div id="img" className='h-[60px] w-[60px] sm:h-[130px] sm:w-[130px]  rounded-full overflow-hidden'>
-                <img className='h-full w-full' src={profileUser?.profilePicURL ||"./img2.png"} alt="" />
+                <img className='h-full w-full object-cover object-top' src={profileUser?.profilePicURL ||"./img2.png"} alt="" />
             </div>
             <div id="user-info" className='text-white flex flex-col'>
                 <div className='flex gap-2 items-baseline text-sm font-semibold'>

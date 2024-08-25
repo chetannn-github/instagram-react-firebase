@@ -27,7 +27,7 @@ const PostHeader = ({owner,uid,caption,createdAt}) => {
     <div id='post-header ' className=' relative flex items-center justify-between h-[50px] w-full px-4 '>
        <div id="post-creater" className='relative flex items-center gap-3  w-full border-l-orange-400'>
         <div id="img" className='h-[34px] w-[34px] rounded-full overflow-hidden'>
-            <img className='h-full w-full' src={postUserInfo?.profilePicURL} alt="" />
+            <img className='h-full w-full object-cover object-top' src={postUserInfo?.profilePicURL} alt="" />
         </div>
         
         <div id="user-info" className='text-white flex flex-col'>

@@ -5,6 +5,7 @@ import { auth, firestore } from "../../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { addUser } from "../../redux/loggedInUserSlice";
+import toast from "react-hot-toast";
 
 
 export let useSignup = () =>{
@@ -52,7 +53,7 @@ export let useSignup = () =>{
           localStorage.setItem("user", JSON.stringify(userInfo));
           console.log("data save hua ")
         }
-           
+        toast.success(" aapka swagat hai! 👏")
         navigate("/");
         }
         catch(error) {

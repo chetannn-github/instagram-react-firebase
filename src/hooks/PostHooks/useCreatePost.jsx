@@ -68,10 +68,12 @@ try{
          localStorage.setItem("user", JSON.stringify(updatedProfile.data()));
          dispatch(closeNewPostModal());
          setLoading(false)
+         toast.success("Aapka post create ho chuka hai, duniya ko dikha do! 🌎")
 
 
       }catch(error){
          console.log(error)
+         toast.error("Post create mein kuch technical issue hai, try again later! 🤖")
       }
    
 

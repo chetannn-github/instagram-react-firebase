@@ -2,6 +2,7 @@ import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../redux/loggedInUserSlice";
+import toast from "react-hot-toast";
 
 
 const useDeletePost = () => {
@@ -24,8 +25,11 @@ const useDeletePost = () => {
             await updateDoc(userRef, {posts:updatedPosts});
             dispatch(addUser({ ...loggedInUser, posts: updatedPosts}));
             localStorage.setItem("user", JSON.stringify({ ...loggedInUser, posts: updatedPosts }));
+            toast.success("Post delete ho gaya, khalaas! 👋")
         } catch (error) {
-            console.log(error.message)
+            console.log(error.message);
+            toast.error("Post ko delete nahi kar saka, kuch technical issue hai! 🤖")
+            
         }
        
 

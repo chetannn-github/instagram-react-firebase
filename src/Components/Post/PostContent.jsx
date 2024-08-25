@@ -21,7 +21,7 @@ const PostContent = ( {postPicURL,uid}) => {
           <UnlikeLogo  like={true} height=''/> 
         </div>}  
         
-        <img className='relative w-full h-full object-contain ' src={postPicURL} alt="" />
+        <img className='relative w-full h-full object-contain md:object-cover' src={postPicURL} alt="" />
         
     </div>
   )

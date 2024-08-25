@@ -30,11 +30,13 @@ const useEditPost = () => {
             dispatch(closeEditPostModal());
             dispatch(addUser(loggedInUser))
             setLoading(false);
-            toast.success("post updated successfully! ")
+            toast.success("Post update kiya gaya, aapka content abhi fresh hai! 🌟")
+            
 
         } catch (error) {
             console.log(error);
-            toast.error("something wrong in edit post!!")
+            toast.error("Post edit mein kuch technical issue hai, try again later! 🤖")
+           
         }
        
 

@@ -49,6 +49,7 @@ const auth = getAuth();
                 dispatch(addUser(userInfo));
                 localStorage.setItem("user", JSON.stringify(userInfo));
             }
+            toast.success(" aapka swagat hai! 👏")
             navigate("/");
         }
       

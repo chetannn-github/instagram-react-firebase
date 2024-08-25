@@ -13,7 +13,9 @@ const useFeedPosts = () => {
     const handleFeedPosts = async() =>{
       try{
         // saari  post nikalo jinke owner  loggeduser ke followings array  me aate ho aur khud ki bhii   aur redux me update krdo
-        if(!loggedInUser && !loggedInUser.followings ) {return}
+        if(!loggedInUser && !loggedInUser.followings ) {
+          
+          return}
 
         let feedPostOwners = [...loggedInUser.followings, loggedInUser.uid]
         const q = query(collection(firestore, "posts"), where("owner", "in", feedPostOwners));
