@@ -24,36 +24,33 @@
 
 ### v1.0
 
-* **Authentication**:
-	+ **Google OAuth**: Sign in with Google
-	+ **Email and Password**: Sign in with email and password
-* **Create Post**: Create and share posts with images and captions
-* **Like Post**: Like and unlike posts
-* **Delete Post**: Delete own posts
-* **Update Profile**: Update profile information and profile picture
-* **Suggest Users**: Get suggestions for users to follow
-* **Search Users**: Search for users by username or name
-* **Follow/Unfollow User**: Follow or unfollow other users
+* **Authentication**
+* **Create Post**
+* **Like Post**
+* **Delete Post**
+* **Update Profile**
+* **Suggest Users**
+* **Search Users**
+* **Follow/Unfollow User**
 
 ## Roadmap
 ----------
 
 ### v2.0
 
-* **Username Validation**: Check for username already exists on updating username
-* **Comment System**: Add comment and delete comment functionality
-* **Followers and Followings List**: Show followers and followings list
-* **Post Save and Like**: Save and show post liked and saved
-* **Image Popup at Profile**: Image popup at profile
-* **Update Password**: Update password functionality
+* **Username Validation**
+* **Comment System**
+* **Followers and Followings List**
+* **Post Save and Like**
+* **Image Popup at Profile**
+* **Update Password**
 
 ### v3.0
 
-* **Chat Messages**: Implement chat messaging system
-* **Reels**: Add reels feature
-* **Public & Private Account**: Implement public and private account feature
-* **Story**: Add story feature
-
+* **Chat Messages**
+* **Reels**
+* **Public & Private Account**
+* **Story**
 ## Tech Stack
 -------------
 
