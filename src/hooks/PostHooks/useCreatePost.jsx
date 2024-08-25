@@ -36,7 +36,10 @@ try{
     } 
 
       setLoading(true)
-      const storageRef = ref(storage, `posts/${loggedInUser.uid}`);
+
+    
+
+      const storageRef = ref(storage, `posts/${loggedInUser.uid}/${new Date().getTime()}`);
       await uploadString(storageRef, selectedFile, 'data_url')
       console.log('Uploaded a data_url string!');
       let URL = await getDownloadURL(storageRef)
