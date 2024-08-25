@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeEditProfileModal } from '../../redux/modalSlice';
 import useUpdateProfile from '../../hooks/ProfileHooks/useUpdateProfile';
+import usePreviewImg from '../../hooks/usePreviewImg';
 
 const EditProfile = () => {
     let isEditPostOpen = useSelector((store)=>(store.modal.editProfileModal))
@@ -15,9 +16,10 @@ const EditProfile = () => {
     }
 
     let handleFormSubmit = () =>{
-        handleUpdateProfile(updateProfileInputs.username.current.value,updateProfileInputs.bio.current.value)
+        handleUpdateProfile(updateProfileInputs.username.current.value,updateProfileInputs.bio.current.value,selectedFile)
     }
 
+  let  {selectedFile, handleImageChange, setSelectedFile } = usePreviewImg();
 
 
   return (
@@ -60,6 +62,7 @@ const EditProfile = () => {
                 type="file"
                 accept="image/*"
                 className="border-l-indigo-400"
+                onChange={handleImageChange}
               />
               <button
                 onClick={handleFormSubmit}
