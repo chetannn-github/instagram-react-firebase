@@ -13,12 +13,12 @@ const Search = () => {
 
   // console.log(isSearchOpen)
   return (
-    <div className='fixed z-50 left-1/2 top-10 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px]  md:translate-x-0 bg-transparent'>
+    <div className='fixed z-50 left-1/2 top-10 -translate-x-1/2 flex w-[100vw] justify-center md:w-[50vw] md:left-[250px]  md:translate-x-0 '>
     
 
     {isSearchOpen && (
     <dialog id="my_modal_3"
-     className="relative mt-10 flex px-3 h-fit  w-[300px] md:w-[370px] border-zinc-100 border-[0.2px]  justify-center items-start " open>
+     className="relative mt-10 flex px-3 h-fit  w-[300px] md:w-[370px] border-zinc-100 border-[0.2px]  justify-center items-start bg-black " open>
       <div className=" relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start ">
         <form method="dialog">
           <div className='flex justify-between items-baseline'>
@@ -35,7 +35,7 @@ const Search = () => {
           <input 
             type="text" 
             ref={searchTxt}
-            className='w-[250px] md:w-[300px] p-2'
+            className='w-[250px] md:w-[300px] p-2 bg-black'
              placeholder='Username'/>
            
           <button type="button" onClick={()=>{handleSearchUsers(searchTxt.current.value)}} className=' bg-gray-400 py-2 px-4 rounded-full mb-3'>Search</button>

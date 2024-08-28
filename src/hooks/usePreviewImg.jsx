@@ -4,7 +4,7 @@ import { useState } from "react";
 const usePreviewImg = () => {
 	const [selectedFile, setSelectedFile] = useState(null);
 
-	const maxFileSizeInBytes = 2 * 1024 * 1024; // 2MB
+	const maxFileSizeInBytes = 10 * 1024 * 1024; // 2MB
 
 	const handleImageChange = (e) => {
 		console.log("image change called");

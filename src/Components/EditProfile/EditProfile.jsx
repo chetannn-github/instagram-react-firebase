@@ -29,7 +29,7 @@ const EditProfile = () => {
     {isEditPostOpen && (
       <dialog
         id="my_modal_3"
-        className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start "
+        className="   relative mt-10  h-fit w-[300px]  md:w-[400px]  justify-center items-start bg-black"
         open
       >
         <div className="border-white border  px-2 md:px-6 py-4 border-opacity-60">
@@ -48,20 +48,20 @@ const EditProfile = () => {
               <input ref={updateProfileInputs.username}
                 defaultValue={loggedInUser?.username}
                 type="text"
-                className="min-w-full md:w-[300px] p-2"
+                className="min-w-full md:w-[300px] p-2 bg-black"
                 placeholder="username"
               /> 
               <input
                 type="text" ref={updateProfileInputs.bio}
                 defaultValue={loggedInUser?.bio}
-                className="min-w-full md:w-[300px] p-2"
+                className="min-w-full md:w-[300px] p-2 bg-black"
                 placeholder="bio"
               /> 
              
               <input
                 type="file"
                 accept="image/*"
-                className="border-l-indigo-400"
+                className="border-l-indigo-400 bg-black"
                 onChange={handleImageChange}
               />
               <div
