@@ -22,8 +22,15 @@ const ProfilePicModal = () => {
         className=" relative mt-10 h-[300px] w-[300px]  md:w-[400px] md:h-[400px]  justify-center items-start  bg-transparent"
         open
       >
-        <div className=" relative px-2 md:px-6 py-4 h-full w-full bg-transparent">
+        <div className=" relative px-2 md:px-6 py-4 h-full w-full bg-transparent flex gap-2 items-start">
           <img src={profileUser?.profilePicURL} className=' rounded-full relative h-full w-full' alt="" />
+          
+              <button
+                className="  "
+                onClick={()=>(dispatch(closeProfilePicModal()))}
+              >
+                ✕
+              </button>
         </div>
       </dialog>
     )}
