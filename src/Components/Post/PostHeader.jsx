@@ -7,6 +7,7 @@ import { openEditPostModal } from '../../redux/modalSlice';
 import { addEditPostDetails, removeEditPostDetails } from '../../redux/editPostSlice';
 import useDeletePost from '../../hooks/PostHooks/useDeletePost';
 import { postTimeConvertor } from '../../utils/postTimeConvertor';
+import { Link } from 'react-router-dom';
 
 const PostHeader = ({owner,uid,caption,createdAt}) => {
   let  handleUserInfo = useUserInfo();
@@ -34,7 +35,7 @@ const PostHeader = ({owner,uid,caption,createdAt}) => {
           {!postUserInfo && <p>Loading</p>}
             {postUserInfo &&(
               <>
-                <p>{postUserInfo?.username } <span className='text-xs ml-1 opacity-70'>{timeAgo}</span></p>
+               <Link to={`/${postUserInfo?.username}`}> <p>{postUserInfo?.username } <span className='text-xs ml-1 opacity-70'>{timeAgo}</span></p></Link>
                 <p>Original audio</p>
               </>)
             }
