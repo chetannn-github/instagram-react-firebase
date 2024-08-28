@@ -63,7 +63,7 @@ useEffect(()=>{
       
       
       
-      <MessageNav/>
+      {/* <MessageNav/> */}
       <ProfileNav/>
     </div>
   )
