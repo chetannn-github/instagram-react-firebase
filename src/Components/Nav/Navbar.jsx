@@ -25,10 +25,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > document.body.offsetHeight - document.getElementById('navbar').offsetHeight) {
-        setHidden(true);
-      } else {
-        setHidden(false);
+      if (window.scrollY < document.body.offsetHeight - document.getElementById('navbar').offsetHeight) {
+        setHidden(true); // navbar ko show karo
+      }  else {
+        setHidden(false); // navbar ko hide karo
       }
     };
     window.addEventListener('scroll', handleScroll);
