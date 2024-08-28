@@ -9,7 +9,7 @@ const useLikePost = () => {
     let feedPosts = useSelector((store) =>(store.feedPosts));
     let dispatch = useDispatch();
 
-    let handleLikePost = async (postId) =>{
+    let handleLikePost = async (postId,doubleTap= false) =>{
     
     try {
         // post id ke basis pr post ko search 
@@ -23,8 +23,11 @@ const useLikePost = () => {
 
 
         // if loggedin user ki uid likes me exist krti hh  toh hata do
+        if(doubleTap && postData.likes.includes(loggedInUser.uid)){
+          return
+        }
 
-        if(postData.likes.includes(loggedInUser.uid)){
+       else if(!doubleTap&&postData.likes.includes(loggedInUser.uid)){
             //unlike
             console.log("unlike ho gya ")
             //post.likes array me se loggedInUser.uid hata do aur save krdo 
@@ -47,14 +50,13 @@ const useLikePost = () => {
              // if loggedin user ki uid likes me exist nhii  krti hh  toh add kr do 
             //like
             console.log("like ho gya ")
-            let updatedLikes =[...postData.likes, loggedInUser.uid];
+            let updatedLikes = [...postData.likes, loggedInUser.uid];
             const postRef = doc(firestore, "posts",postId);
             await updateDoc(postRef, {likes:updatedLikes});
 
 
-               // update  redux 
-
-            //    let newFeedPosts = feedPosts.filter((feedPost)=>(feedPost.uid!== postId)); 
+            // update  redux 
+            //  let newFeedPosts = feedPosts.filter((feedPost)=>(feedPost.uid!== postId)); 
             // agr order matter krtaa hhh filter use krke spread mt krooo 
 
                const newFeedPosts = feedPosts.map((feedPost) => {

@@ -10,7 +10,7 @@ const PostContent = ( {postPicURL,uid}) => {
       setShowUnlike(false);
     }, 1000); // hide the unlike logo after 1 second
  
-    handleLike(uid)
+    handleLike(uid,true)
   }
 
   let handleLike = useLikePost();
