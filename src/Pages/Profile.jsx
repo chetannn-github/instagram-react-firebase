@@ -33,7 +33,7 @@ const Profile = () => {
       </div>)
       }
 
-      {profileUser &&( <div className='  min-h-[100vh] px-2  py-5 relative md:ml-[250px] md:px-10 '>
+      {profileUser &&( <div className='  min-h-[100vh] w-[100%] px-2  py-5 relative md:ml-[250px] md:w-[calc(100%-250px)]  md:px-10 bg-black '>
            <ProfileHeader/>
             <ProfileNav/>
             <AllPosts/>

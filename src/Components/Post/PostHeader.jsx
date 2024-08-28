@@ -46,13 +46,13 @@ const PostHeader = ({owner,uid,caption,createdAt}) => {
        unfollow 
        </div>}
        {loggedInUser.uid === owner &&<div className='flex gap-2'>
-       <Pencil onClick={()=>{
+       <Pencil className='cursor-pointer' onClick={()=>{
         dispatch(removeEditPostDetails());
         dispatch(openEditPostModal());
         dispatch(addEditPostDetails({uid,caption}))
       }
         }/>
-       <Trash2  stroke='red'
+       <Trash2 className='cursor-pointer' stroke='red'
         onClick={()=>{
           handleDelete(uid,owner);
         }
