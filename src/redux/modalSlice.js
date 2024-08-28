@@ -6,7 +6,8 @@ const modalSlice = createSlice({
         searchModal:false,
         newPostModal:false,
         editProfileModal:false,
-        editPostModal:false
+        editPostModal:false,
+        profilePicModal:false
 
     },
     reducers:{
@@ -34,10 +35,17 @@ const modalSlice = createSlice({
         closeEditPostModal:(state ) =>{
             state.editPostModal= false;
         },
+        openProfilePicModal:(state ) =>{
+            state.profilePicModal = true;
+            console.log("modal open hua")
+        },
+        closeProfilePicModal:(state ) =>{
+            state.profilePicModal= false;
+        },
     }
 });
 
 export default modalSlice.reducer;
 export const {
     openNewPostModal, openSearchModal, closeSearchModal,closeNewPostModal,openEditProfileModal,closeEditProfileModal,openEditPostModal,closeEditPostModal
-} = modalSlice.actions;
+,openProfilePicModal,closeProfilePicModal} = modalSlice.actions;

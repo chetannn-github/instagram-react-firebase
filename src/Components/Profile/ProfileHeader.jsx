@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { openEditProfileModal } from '../../redux/modalSlice';
+import { openEditProfileModal, openProfilePicModal } from '../../redux/modalSlice';
 import useSignout from '../../hooks/AuthHooks/useSignout';
 
 const ProfileHeader = () => {
@@ -18,7 +18,8 @@ const ProfileHeader = () => {
   return (
 
         <div className='w-full relative  mb-10 flex gap-3 items-center '>
-            <div id="img" className='h-[60px] w-[60px] sm:h-[130px] sm:w-[130px]  rounded-full overflow-hidden'>
+            <div id="img" className='h-[60px] w-[60px] sm:h-[130px] sm:w-[130px]  rounded-full overflow-hidden cursor-pointer' onClick={()=>{
+                  dispatch(openProfilePicModal())}}>
                 <img className='h-full w-full object-cover object-top' src={profileUser?.profilePicURL ||"./img2.png"} alt="" />
             </div>
             <div id="user-info" className='text-white flex flex-col'>
