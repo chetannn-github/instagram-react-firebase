@@ -21,21 +21,33 @@ const Navbar = () => {
   let navigate = useNavigate();
 
 
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
 
+  let timeoutId = null;
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY < document.body.offsetHeight - document.getElementById('navbar').offsetHeight) {
-        setHidden(true); // navbar ko show karo
-      }  else {
+      if (window.scrollY > document.body.offsetHeight - document.getElementById('navbar').offsetHeight) {
+        setHidden(true);
+      } else {
         setHidden(false); // navbar ko hide karo
       }
+
+      // Clear the previous timeout
+      clearTimeout(timeoutId);
+
+      // Set a new timeout to check if the user has stopped scrolling
+      timeoutId = setTimeout(() => {
+        setHidden(false); // navbar ko hide karo when user stops scrolling
+      }, 500); // adjust the timeout duration as needed
     };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      clearTimeout(timeoutId); // clear the timeout when the component is unmounted
+    }
+    },[]);
 
   
 useEffect(()=>{
