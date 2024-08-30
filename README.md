@@ -32,7 +32,7 @@
 * **Suggest Users**
 * **Search Users**
 * **Follow/Unfollow User**
-
+* **Image Popup at Profile**
 ## Roadmap
 ----------
 
@@ -41,9 +41,9 @@
 * **Username Validation**
 * **Comment System**
 * **Followers and Followings List**
-* **Post Save and Like**
-* **Image Popup at Profile**
+* **List  Saved and Liked Post**
 * **Update Password**
+
 
 ### v3.0
 
