@@ -39,7 +39,7 @@ const auth = getAuth();
                     bio:"",
                     profilePicURL:user.photoURL,
                     followers:[],
-                    followings:["Mklt9vKxC1bJQLJkJDVdCYQVJw42"],
+                    followings:["FjkZzIL9cqe0FNHq2VNL1VH76wl1"],
                     posts:[],
                     createdAt:Date.now(),
     
