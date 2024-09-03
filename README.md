@@ -23,22 +23,32 @@
 
 
 ### v1.0
-
-* **Authentication**✅
+* **Responsive Design**✅
+ * **Cool NavBar on Mobile**✅
+  * 
+* **Firebase Authentication**✅
+* **Google OAuth**✅
+* 
+  
+* **Feed Page**✅
 * **Create Post**✅
 * **Like Post**✅
 * **Delete Post**✅
+* 
+  
+* **Profile Page**✅
 * **Update Profile**✅
 * **Suggest Users**✅
 * **Search Users**✅
 * **Follow/Unfollow User**✅
+  
 
-## Roadmap
+## Upcoming Plans
 ----------
 
 ### v2.0
 * **Image Popup at Profile** ✅
-* **Username Validation**
+* **Username Validation on updating Profile**
 * **Comment System**
 * **Followers and Followings List**
 * **List  Saved and Liked Post**
