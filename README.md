@@ -24,20 +24,20 @@
 
 ### v1.0
 
-* **Authentication**
-* **Create Post**
-* **Like Post**
-* **Delete Post**
-* **Update Profile**
-* **Suggest Users**
-* **Search Users**
-* **Follow/Unfollow User**
-* **Image Popup at Profile**
+* **Authentication**✅
+* **Create Post**✅
+* **Like Post**✅
+* **Delete Post**✅
+* **Update Profile**✅
+* **Suggest Users**✅
+* **Search Users**✅
+* **Follow/Unfollow User**✅
+
 ## Roadmap
 ----------
 
 ### v2.0
-
+* **Image Popup at Profile** ✅
 * **Username Validation**
 * **Comment System**
 * **Followers and Followings List**
