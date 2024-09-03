@@ -25,16 +25,15 @@
 ### v1.0
 * **Responsive Design**✅
  * **Cool NavBar on Mobile**✅
-  * 
+    
 * **Firebase Authentication**✅
 * **Google OAuth**✅
-* 
+  
   
 * **Feed Page**✅
 * **Create Post**✅
 * **Like Post**✅
 * **Delete Post**✅
-* 
   
 * **Profile Page**✅
 * **Update Profile**✅
